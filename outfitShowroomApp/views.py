@@ -11,8 +11,8 @@ def index(request):
 def prueba(request): #prueba
 	nombre = 'Prueba'
 	context = {
-		'login': True
-		'nombre': nombre #TODO
+		'login': True,
+		'nombre': nombre
 	}	
 	return render(request, prueba.html, context)
 
