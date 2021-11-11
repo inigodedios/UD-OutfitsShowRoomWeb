@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from outfitShowroomApp.modelsg import Prenda, Outfit, Ocasion, Estilo
+from outfitShowroomApp.models import Prenda, Outfit, Ocasion, Estilo
 # Register your models here.
 admin.site.register(Prenda)
 admin.site.register(Outfit)
