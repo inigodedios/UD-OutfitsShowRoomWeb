@@ -27,8 +27,8 @@ urlpatterns = [
     path ('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
     
     #LIST VIEWS
-    path ('prenda/<id_pr>/', views.PrendaListView.as_view(), name='prenda_l'),
-    path ('ocasion/<id_oc>/', views.OcasionListView.as_view(), name='ocasion_l'),
-    path ('estilo/<id_est>/', views.EstiloListView.as_view(), name='estilo_l'),
-    path ('outfit/<id_out>/', views.OutfitListView.as_view(), name='outfit_l'),
+    path ('prenda/', views.PrendaListView.as_view(), name='prenda_l'),
+    path ('ocasion/', views.OcasionListView.as_view(), name='ocasion_l'),
+    path ('estilo/', views.EstiloListView.as_view(), name='estilo_l'),
+    path ('outfit/', views.OutfitListView.as_view(), name='outfit_l'),
 ]
