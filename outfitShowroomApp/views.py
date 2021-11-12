@@ -23,7 +23,9 @@ class OcasionDetailView(DetailView):
 	model:Ocasion
 	def get_context_data(self, **kwargs):
 		context = super(OcasionDetailView, self).get_context_data(**kwargs) 
+		print(context)
 		context['ocasion_list'] = Ocasion.objects.all()
+		print(context)
 		return context
 
 class EstiloDetailView(DetailView):
@@ -59,9 +61,7 @@ class OcasionListView(ListView):
 		context = super(OcasionListView, self).get_context_data(**kwargs)
 		context['titulo_ocasion'] = 'Listado de ocasiones'
 		return context
-	"""def get_queryset(self): TODO
-		return self.queryset.filter() #Yo no ordenaria por nada - Iñigo
-	"""
+	
 
 class EstiloListView(ListView):
 	model:Estilo
@@ -70,9 +70,6 @@ class EstiloListView(ListView):
 		context = super(EstiloListView, self).get_context_data(**kwargs)
 		context['titulo_estilo'] = 'Listado de estilos'
 		return context
-	"""def get_queryset(self):
-		return self.queryset.filter()
-	"""	
 
 class OutfitListView(ListView):
 	model:Outfit
