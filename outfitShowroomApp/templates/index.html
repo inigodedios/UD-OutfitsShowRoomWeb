@@ -11,13 +11,13 @@
 
 		<script src="{% static '../static/js/jquery.min.js' %}"></script>
 		<script src="{% static '../static/js/jquery.dropotron.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.scrollgress.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.scrolly.min.js' %}"></script>
+		<script src=>"{% static '../static/js/jquery.scrollgress.min.js' %}"</script>
+		<script src=>"{% static '../static/js/jquery.scrolly.min.js' %}"</script>
 		<script src="{% static '../static/js/jquery.slidertron.min.js' %}"></script>
-		<script src="{% static '../static/js/skel.min.js' %}"></script>
-		<script src="{% static '../static/js/skel-layers.min.js' %}"></script>
-		<script src="{% static '../static/js/init.js' %}"></script>
-		<script src="{% static '../static/js/jquery-1.11.3.min.js' %}"></script> <!-- jQuery (https://jquery.com/download/) -->
+		<script src=>"{% static '../static/js/skel.min.js' %}"</script>
+		<script src=>"{% static '../static/js/skel-layers.min.js' %}"</script>
+		<script src=>"{% static '../static/js/init.js' %}"</script>
+		<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script> <!-- jQuery (https://jquery.com/download/) -->
 
 		<link rel="stylesheet" href="{% static '../static/css/skel.css' %}" />
 		<link rel="stylesheet" href="{% static '../static/css/style.css' %} " />
@@ -37,34 +37,29 @@
 						
 						<li>
 							<a href="" class="icon fa-angle-down">Ocasiones</a>
-							
+							{%for i in ocasion_list%}
 							<ul>
-								{%for i in ocasion_list%}
 								<li><a href="left-sidebar.html">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
-								{% endfor %}
 							</ul>
-							
+							{% endfor %}
 						</li>
 						
 						<li>
 							<a href="" class="icon fa-angle-down">Estilos</a>
-							
+							{%for i in estilo_list%}
 							<ul>
-								{%for i in estilo_list%}
 								<li><a href="left-sidebar.html">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
-								{% endfor %}
 							</ul>
+							{% endfor %}
 						</li>
 
 						<li>
 							<a href="" class="icon fa-angle-down">Outfits</a>
-							
+							{%for i in outfit_list%}
 							<ul>
-								{%for i in outfit_list%}
 								<li><a href="left-sidebar.html">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
-								{% endfor %}
 							</ul>
-							
+							{% endfor %}
 						</li>
 
 						<li><a href="elements.html">Elements</a></li>
