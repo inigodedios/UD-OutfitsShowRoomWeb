@@ -6,59 +6,56 @@ from .models import Prenda, Ocasion, Estilo, Outfit
 
 
 
-# Create your views here.
-def index(request):
-	return HttpResponse("Hello, world!")
-
 #DETAIL VIEWS
-class PrendaDetailView(DetailView):
-    #IMPORTANTE -> No hay que establecer la pk, ya que coge el pk de nuestro modelo no el pk automatico. Creo que no genera un pk automatico porque en el DB Browser solo aparece nuestra pk
-    model=Prenda
-    template_name= 'prueba_detail.html'
+# class PrendaDetailView(DetailView):
+#     model=Prenda
+#     template_name= 'prueba_detail.html'
 
 class OcasionDetailView(DetailView):
-	model=Ocasion
+    model=Ocasion
+    template_name= 'ocasion.html'
 
 class EstiloDetailView(DetailView):
-	model=Estilo
+    template_name= 'estilo.html'
+    model=Estilo
 
-class OutfitDetailView(DetailView):
-	model=Outfit
+# class OutfitDetailView(DetailView):
+# 	model=Outfit
 
 
 #DETAIL LISTS
-class PrendaListView(ListView):
-	model=Prenda
-	queryset = Prenda.objects.order_by('nombre') #Recuerda! -> Por convencion -> prenda_list
-	# def get_queryset(self):
-	# 	return self.queryset.filter(Prenda.precio>35)
-	
-	
-
-class OcasionListView(ListView):
-    model=Ocasion
-    queryset = Ocasion.objects.order_by('nombre')
-    template_name= 'prueba_list.html'
-
-
-
-class EstiloListView(ListView):
-    template_name= 'index.html'
-    model=Estilo
-    queryset = Estilo.objects.order_by('nombre')
+class HomeListView(ListView):
+    # Añadir en la base de datos una tabla con la la descripcion, logo... de la empresa para asignarle un model infoEmppresa, no estilo --> sería mas correcto
+    template_name= 'home.html'
+    model = Estilo
     
-    #Debido a que necesitamos datos de los outfits en la pagina web que corresponde a Estilo
     def get_context_data(self, **kwargs):
-        context = super(EstiloListView, self).get_context_data(**kwargs)
+        context = super(HomeListView, self).get_context_data(**kwargs)
         context['ocasion_list'] = Ocasion.objects.order_by('id_oc')
         context['outfit_list'] = Outfit.objects.order_by('nombre')
         return context
     
 
-class OutfitListView(ListView):
-    model=Outfit
-    queryset = Outfit.objects.order_by('nombre')
     
+
+# class PrendaListView(ListView):
+# 	model=Prenda
+# 	queryset = Prenda.objects.order_by('nombre') #Recuerda! -> Por convencion -> prenda_list
+# 	# def get_queryset(self):
+# 	# 	return self.queryset.filter(Prenda.precio>35)	
+
+# class OcasionListView(ListView):
+#     template_name= 'ocasion.html'
+#     model=Ocasion
+#     queryset = Ocasion.objects.order_by('nombre')
     
-	# def get_queryset(self):
-	# 	return self.queryset.filter(Outfit.precio>35)
+# class EstiloListView(ListView):
+#     template_name= 'index.html'
+#     model=Estilo
+#     queryset = Estilo.objects.order_by('nombre')
+    
+# class OutfitListView(ListView):
+#     model=Outfit
+#     queryset = Outfit.objects.order_by('nombre')
+# 	# def get_queryset(self):
+# 	# 	return self.queryset.filter(Outfit.precio>35)

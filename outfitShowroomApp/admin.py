@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import Prenda, Outfit, Ocasion, Estilo
 
+"""
+TODO En el panel de administración cuando añadimos un outfit, tenemos que asociarlo a uno/varios estilos y una/varias prendas.
+Problema-> a la hora de asignar a que prendas y estilos pertenecen, solo sale el id de estas. Tenemos que conseguir que salga el id y su nombre
+MIRAR IMAGEN para entenderlo mejor -> outfitShowroomApp/static/problema_en_admin.png 
+"""
 
 class PrendaAdmin(admin.ModelAdmin):
     list_display=("id_pr", "nombre", "tipo_prenda", "talla", "precio", "materiales",)

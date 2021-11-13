@@ -26,7 +26,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body class="landing">
-
+		<!-- TODO mirar porque se ha cambiado el formato de los textos-> negrtia, tamaño... Mirar en style.css !!!-->
 		<!-- Header -->
 			<header id="header" class="alt skel-layers-fixed name=header">
 				{%block menus_desplegables%}
@@ -34,40 +34,32 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="#header">Home</a></li>
-						
 						<li>
 							<a href="" class="icon fa-angle-down">Ocasiones</a>
-							
 							<ul>
 								{%for i in ocasion_list%}
-								<li><a href="left-sidebar.html">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
+								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
 								{% endfor %}
 							</ul>
 							
 						</li>
-						
 						<li>
 							<a href="" class="icon fa-angle-down">Estilos</a>
 							<ul>
 								{%for i in estilo_list%}
-								<li><a href="left-sidebar.html">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
+								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
 								{% endfor %}
 							</ul>
 							
 						</li>
-
 						<li>
 							<a href="" class="icon fa-angle-down">Outfits</a>
-							
 							<ul>
 								{%for i in outfit_list%}
 								<li><a href="left-sidebar.html">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
 								{% endfor %}
 							</ul>
-							
 						</li>
-
-						<li><a href="elements.html">Elements</a></li>
 					</ul>
 				</nav>
 				{%endblock%}
@@ -89,7 +81,6 @@
 				<div class="container">
 					<header class="major">
 						<h2>GALERÍA 2021</h2>
-						 
 						<p>Outfit Showroom! is a company dedicated to creating outfits based on<br /> <!-- Igual esto en vez de darle estilo/formato mediante br podriamos centrarlo desde css TODO -->
 						occasions and styles. To do this, we have a great team of experts in trends.<br /></p>
 					</header>
@@ -112,24 +103,54 @@
 					</div>
 				</div>
 			</section>
+
 			
 		<!-- Two -->
-			<section id="two" class="wrapper style2">	
+			<section id="two" class="wrapper style2">
+				<div class="container">
 					{%block estilos%}
 					<div class="row uniform">
 						{%for i in estilo_list%}
-						<div class="4u 6u(2) 12u$(3)">
-							<section class="feature fa-briefcase"> 
+						<div class="4u 6u(2) 12u$(3)"> 
+							<section class="feature fa-briefcase"> <!-- TODO utiliza "feature fa-..." para asignar iconos a cada bloque, entre otras cosas. Antes habia 6 bloques en el HTML pero con el for lo hemos redudico a 1 ya que lo multiplica por 6. Hay que conseguir que salga un icono distinto en cada bloque (Mirar codigo comentado)-->	
 								<h3>{{i.nombre}}</h3> <!-- TODO poner link que lleve la ventana de estilo Casual-->
 								<p>{{i.desc}}</p>
 							</section>
 						</div>
 						{%endfor%}
+						<!-- <div class="4u 6u$(2) 12u$(3)">
+							<section class="feature fa-code">
+								<h3>Ultricies dolore</h3>
+								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+							</section>
+						</div>
+						<div class="4u$ 6u(2) 12u$(3)">
+							<section class="feature fa-save">
+								<h3>Magna lacinia</h3>
+								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+							</section>
+						</div>
+						<div class="4u 6u$(2) 12u$(3)">
+							<section class="feature fa-desktop">
+								<h3>Praesent lacinia</h3>
+								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+							</section>
+						</div>
+						<div class="4u 6u(2) 12u$(3)">
+							<section class="feature fa-camera-retro">
+								<h3>Morbi semper</h3>
+								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+							</section>
+						</div>
+						<div class="4u$ 6u$(2) 12u$(3)">
+							<section class="feature fa-cog">
+								<h3>Arcu consequat</h3>
+								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+							</section>
+						</div> -->
 					</div>
 					{%endblock%}
-					
-				</div>
-				
+				</div>				
 			</section>
 			
 		<!-- Three -->

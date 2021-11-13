@@ -18,17 +18,18 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('index/', views.index, name='index'),
-    
     #DETAIL VIEWS
-    path ('prenda/<int:pk>/', views.PrendaDetailView.as_view(), name='prenda_d'),
     path ('ocasion/<int:pk>/', views.OcasionDetailView.as_view(), name='ocasion_d'),
+    
+    # path ('prenda/<int:pk>/', views.PrendaDetailView.as_view(), name='prenda_d'),
     path ('estilo/<int:pk>/', views.EstiloDetailView.as_view(), name='estilo_d'),
-    path ('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
+    # path ('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
     
     #LIST VIEWS
-    path ('prenda/', views.PrendaListView.as_view(), name='prenda_l'),
-    path ('ocasion', views.OcasionListView.as_view(), name='ocasion_l'),
-    path ('home/', views.EstiloListView.as_view(), name='estilo_l'),
-    path ('outfit/', views.OutfitListView.as_view(), name='outfit_l'),
+    path ('home/', views.HomeListView.as_view(), name='estilo_l'),
+    
+    # path ('prenda/', views.PrendaListView.as_view(), name='prenda_l'),
+    # path ('ocasion', views.OcasionListView.as_view(), name='ocasion_l'),
+    # path ('estilo/', views.EstiloListView.as_view(), name='estilo_l'),
+    # path ('outfit/', views.OutfitListView.as_view(), name='outfit_l'),
 ]
