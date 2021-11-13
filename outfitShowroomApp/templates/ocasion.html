@@ -32,26 +32,6 @@
 					{%block ocasion_outfits%}
 					<ul>
 						<li><a href="../../home">Home</a></li> <!-- TODO preguntar como se redirige a paginas anteriores. ¿Es así?-->
-						<li>
-							
-							<a href="" class="icon fa-angle-down">Outfits {{ocasion.nombre}}</a>
-							<ul>
-							
-								<li><a href="left-sidebar.html">{{j.id}}</a></li>
-								
-							
-								<!-- <li>
-									<a href="">Submenu</a>
-									<ul>
-										<li><a href="#">Option 1</a></li>
-										<li><a href="#">Option 2</a></li>
-										<li><a href="#">Option 3</a></li>
-										<li><a href="#">Option 4</a></li>
-									</ul>
-								</li> -->
-							</ul>
-							
-						</li>
 					</ul>
 					{%endblock%}	
 				</nav>
@@ -98,12 +78,23 @@
 						<div class="8u 12u$(2) important(2)">
 						
 							<!-- Content -->
+							{%block prueba%}
 								<section id="content">
 									<a href="#" class="image fit"><img src="images/slide02.jpg" alt="" /></a>
-									<h3>Dolore Amet Consequat</h3>
-									<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-									<h3>Sed Magna Ornare</h3>
-									<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
+									<h3>Ocasiones asociadas</h3>
+									
+									{%for i in outfit_list %}
+									<ul>
+										
+										<li>{{i.nombre}}</li>
+										
+									</ul>
+									{%endfor%}
+
+									<h3>Tipos de estilos para los que estan pensado</h3>
+									<p>
+
+									</p>
 									<ul>
 										<li>Faucibus orci lobortis ac adipiscing integer.</li>
 										<li>Col accumsan arcu mi aliquet placerat.</li>
@@ -111,7 +102,9 @@
 										<li>Blandit massa non blandit tempor interdum.</li>
 										<li>Lacinia mattis arcu nascetur lobortis.</li>
 									</ul>
+									
 								</section>
+							{%endblock%}
 								
 						</div>
 					</div>
