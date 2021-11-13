@@ -50,7 +50,7 @@ class EstiloListView(ListView):
     #Debido a que necesitamos datos de los outfits en la pagina web que corresponde a Estilo
     def get_context_data(self, **kwargs):
         context = super(EstiloListView, self).get_context_data(**kwargs)
-        context['ocasion_list'] = Outfit.objects.order_by('id_out')
+        context['ocasion_list'] = Ocasion.objects.order_by('id_oc')
         context['outfit_list'] = Outfit.objects.order_by('nombre')
         return context
     
