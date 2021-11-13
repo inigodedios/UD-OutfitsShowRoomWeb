@@ -16,9 +16,23 @@ class OcasionDetailView(DetailView):
     template_name= 'ocasion.html'        
     def get_context_data(self, **kwargs):
         context = super(OcasionDetailView, self).get_context_data(**kwargs)
-        context['outfit_list'] = Outfit.objects.filter(outfitsocasiones=self.object.id_oc) 
+        context['outfit_list'] = Outfit.objects.filter(outfits=self.object.id_oc)
         return context
     
+
+class OutfitDetailView(DetailView):
+    template_name= 'outfit.html'
+    model=Outfit
+    def get_context_data(self, **kwargs):
+        context = super(OutfitDetailView, self).get_context_data(**kwargs)
+        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Preguntar, no entiendo al 100% como hace la relacion entre las tabals intermedias
+        context['estilo_list'] = Estilo.objects.filter(outfits=self.object.estilo_id)
+        return context
+
+
+
+
+
 
 class EstiloDetailView(DetailView):
     template_name= 'estilo.html'
