@@ -23,7 +23,7 @@ urlpatterns = [
     
     # path ('prenda/<int:pk>/', views.PrendaDetailView.as_view(), name='prenda_d'),
     path ('estilo/<int:pk>/', views.EstiloDetailView.as_view(), name='estilo_d'),
-    # path ('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
+    path ('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
     
     #LIST VIEWS
     path ('home/', views.HomeListView.as_view(), name='estilo_l'),

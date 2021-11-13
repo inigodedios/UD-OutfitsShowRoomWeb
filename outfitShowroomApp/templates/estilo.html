@@ -47,7 +47,6 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="elements.html">Elements</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -55,8 +54,10 @@
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>Right Sidebar</h2>
-					<p>Faucibus neque adipiscing mi lorem semper blandit</p>
+					{%block estilo_info%}
+					<h2>{{estilo.nombre}}</h2>
+					<p>{{estilo.desc}}</p>
+					{%endblock%}
 				</header>
 				<div class="container">
 					<div class="row 150%">

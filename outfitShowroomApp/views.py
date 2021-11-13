@@ -13,14 +13,27 @@ from .models import Prenda, Ocasion, Estilo, Outfit
 
 class OcasionDetailView(DetailView):
     model=Ocasion
-    template_name= 'ocasion.html'
+    template_name= 'ocasion.html'        
+    def get_context_data(self, **kwargs):
+        context = super(OcasionDetailView, self).get_context_data(**kwargs)
+        context['outfit_list'] = Outfit.objects.order_by('nombre').select_related('ocasiones')
+        return context
+    
+    
 
 class EstiloDetailView(DetailView):
     template_name= 'estilo.html'
     model=Estilo
+    
 
-# class OutfitDetailView(DetailView):
-# 	model=Outfit
+class OutfitDetailView(DetailView):
+    template_name= 'outfit.html'
+    model=Outfit
+    def get_context_data(self, **kwargs):
+        context = super(OutfitDetailView, self).get_context_data(**kwargs)
+        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Preguntar, no entiendo al 100% como hace la relacion entre las tabals intermedias
+        context['estilo_list'] = Estilo.objects.filter(outfits=self.object.id_out)
+        return context
 
 
 #DETAIL LISTS
@@ -29,6 +42,7 @@ class HomeListView(ListView):
     template_name= 'home.html'
     model = Estilo
     
+
     def get_context_data(self, **kwargs):
         context = super(HomeListView, self).get_context_data(**kwargs)
         context['ocasion_list'] = Ocasion.objects.order_by('id_oc')

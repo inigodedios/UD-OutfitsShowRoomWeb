@@ -29,15 +29,18 @@
 			<header id="header" class="skel-layers-fixed">
 			<h1><a href="index.html">HTML5 Website <span>by Html5webtemplates.co.uk</span></a></h1>	
 				<nav id="nav">
+					{%block ocasion_outfits%}
 					<ul>
 						<li><a href="../../home">Home</a></li> <!-- TODO preguntar como se redirige a paginas anteriores. ¿Es así?-->
 						<li>
-							<a href="" class="icon fa-angle-down">Layouts</a>
+							
+							<a href="" class="icon fa-angle-down">Outfits {{ocasion.nombre}}</a>
 							<ul>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-								<li>
+							
+								<li><a href="left-sidebar.html">{{j.id}}</a></li>
+								
+							
+								<!-- <li>
 									<a href="">Submenu</a>
 									<ul>
 										<li><a href="#">Option 1</a></li>
@@ -45,19 +48,23 @@
 										<li><a href="#">Option 3</a></li>
 										<li><a href="#">Option 4</a></li>
 									</ul>
-								</li>
+								</li> -->
 							</ul>
+							
 						</li>
-						<li><a href="elements.html">Elements</a></li>
 					</ul>
+					{%endblock%}	
 				</nav>
 			</header>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
+
 				<header class="major">
-					<h2>Left Sidebar</h2>
-					<p>Faucibus neque adipiscing mi lorem semper blandit</p>
+					{%block ocasion_info%}
+					<h2>{{ocasion.nombre}}</h2>
+					<p>{{ocasion.desc}}</p>
+					{%endblock%}
 				</header>
 				<div class="container">
 					<div class="row 150%">
