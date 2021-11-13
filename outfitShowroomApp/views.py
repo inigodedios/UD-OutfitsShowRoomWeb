@@ -10,12 +10,11 @@ from .models import Prenda, Ocasion, Estilo, Outfit
 def index(request):
 	return HttpResponse("Hello, world!")
 
-
 #DETAIL VIEWS
 class PrendaDetailView(DetailView):
-    #IMPORTANTE -> No hay que establecer la pk, ya que coge el pk de nuestro modelo no el pk automatico. Creo que no genera un pk automatico porque hemos establecido que uno de nuestros atributo sea el pk (en el DB Browser solo aparece nuestra pk)
+    #IMPORTANTE -> No hay que establecer la pk, ya que coge el pk de nuestro modelo no el pk automatico. Creo que no genera un pk automatico porque en el DB Browser solo aparece nuestra pk
     model=Prenda
-    template_name= 'prueba.html'
+    template_name= 'prueba_detail.html'
 
 class OcasionDetailView(DetailView):
 	model=Ocasion
@@ -30,21 +29,36 @@ class OutfitDetailView(DetailView):
 #DETAIL LISTS
 class PrendaListView(ListView):
 	model=Prenda
-	queryset = Prenda.objects.order_by('-nombre') #Recuerda! -> Por convencion el objeto resultante de una queryset se queda en una variable llamada por el nombreModelo_list -> empleado_list
-	def get_queryset(self):
-		return self.queryset.filter(Prenda.precio>35)
+	queryset = Prenda.objects.order_by('nombre') #Recuerda! -> Por convencion -> prenda_list
+	# def get_queryset(self):
+	# 	return self.queryset.filter(Prenda.precio>35)
+	
+	
 
 class OcasionListView(ListView):
-	model=Ocasion
-	queryset = Ocasion.objects.order_by('-nombre')
+    model=Ocasion
+    queryset = Ocasion.objects.order_by('nombre')
+    template_name= 'prueba_list.html'
+
 
 
 class EstiloListView(ListView):
-	model=Estilo
-	queryset = Estilo.objects.order_by('-nombre')
+    template_name= 'home.html'
+    model=Estilo
+    queryset = Estilo.objects.order_by('nombre')
+    
+    #Debido a que necesitamos datos de los outfits en la pagina web que corresponde a Estilo
+    def get_context_data(self, **kwargs):
+        context = super(EstiloListView, self).get_context_data(**kwargs)
+        context['ocasion_list'] = Outfit.objects.order_by('nombre')
+        context['outfit_list'] = Outfit.objects.order_by('nombre')
+        return context
+    
 
 class OutfitListView(ListView):
-	model=Outfit
-	queryset = Outfit.objects.order_by('-nombre')
-	def get_queryset(self):
-		return self.queryset.filter(Outfit.precio>35)
+    model=Outfit
+    queryset = Outfit.objects.order_by('nombre')
+    
+    
+	# def get_queryset(self):
+	# 	return self.queryset.filter(Outfit.precio>35)
