@@ -43,14 +43,14 @@ class OcasionListView(ListView):
 
 
 class EstiloListView(ListView):
-    template_name= 'home.html'
+    template_name= 'index.html'
     model=Estilo
     queryset = Estilo.objects.order_by('nombre')
     
     #Debido a que necesitamos datos de los outfits en la pagina web que corresponde a Estilo
     def get_context_data(self, **kwargs):
         context = super(EstiloListView, self).get_context_data(**kwargs)
-        context['ocasion_list'] = Outfit.objects.order_by('nombre')
+        context['ocasion_list'] = Outfit.objects.order_by('id_out')
         context['outfit_list'] = Outfit.objects.order_by('nombre')
         return context
     

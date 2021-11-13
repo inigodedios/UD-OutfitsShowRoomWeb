@@ -8,6 +8,7 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+
 		<script src="{% static '../static/js/jquery.min.js' %}"></script>
 		<script src="{% static '../static/js/jquery.dropotron.min.js' %}"></script>
 		<script src=>"{% static '../static/js/jquery.scrollgress.min.js' %}"</script>
@@ -16,7 +17,6 @@
 		<script src=>"{% static '../static/js/skel.min.js' %}"</script>
 		<script src=>"{% static '../static/js/skel-layers.min.js' %}"</script>
 		<script src=>"{% static '../static/js/init.js' %}"</script>
-
 		<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script> <!-- jQuery (https://jquery.com/download/) -->
 
 		<link rel="stylesheet" href="{% static '../static/css/skel.css' %}" />
@@ -142,16 +142,6 @@
 
 					<div class="row">
 					{%block outfits%}
-						<div class="4u 6u(2) 12u$(3)">
-							<article class="box post">
-								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/BÁSICA/Captura de pantalla 2021-11-12 a las 0.14.12.png' %}" alt="" /></a>
-								<h3>{{i.nombre}}</h3>
-								<p>{{i.desc}}</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</article>
-						</div>
 						{%for i in outfit_list%}
 						<div class="4u 6u$(2) 12u$(3)">
 							<article class="box post">
@@ -162,47 +152,6 @@
 									<li><a href="#" class="button">Learn More</a></li>
 								</ul>
 							</article>
-						</div>
-						<div class="4u$ 6u(2) 12u$(3)">
-							<article class="box post">
-								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/BÁSICA/Captura de pantalla 2021-11-12 a las 0.14.12.png' %}" alt="" /></a>
-								<h3>{{i.nombre}}</h3>
-								<p>{{i.desc}}</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</article>
-						</div>
-						<div class="4u 6u$(2) 12u$(3)">
-							<article class="box post">
-								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/BÁSICA/Captura de pantalla 2021-11-12 a las 0.14.12.png' %}" alt="" /></a>
-								<h3>{{i.nombre}}</h3>
-								<p>{{i.desc}}</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</article>
-						</div>
-						<div class="4u 6u(2) 12u$(3)">
-							<article class="box post">
-								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/BÁSICA/Captura de pantalla 2021-11-12 a las 0.14.12.png' %}" alt="" /></a>
-								<h3>{{i.nombre}}</h3>
-								<p>{{i.desc}}</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</article>
-						</div>
-						<div class="4u$ 6u$(2) 12u$(3)">
-							<article class="box post">
-								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/BÁSICA/Captura de pantalla 2021-11-12 a las 0.14.12.png' %}" alt="" /></a>
-								<h3>{{i.nombre}}</h3>
-								<p>{{i.desc}}</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</article>
-						
 						</div>
 						{% endfor%}
 					</div>
