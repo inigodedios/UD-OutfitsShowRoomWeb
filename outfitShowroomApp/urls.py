@@ -19,14 +19,14 @@ from . import views
 
 urlpatterns = [
     #DETAIL VIEWS
-    path ('ocasion/<int:pk>/', views.OcasionDetailView.as_view(), name='ocasion_d'),
-    path ('estilo/<int:pk>/', views.EstiloDetailView.as_view(), name='estilo_d'),
-    path ('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
+    path('ocasion/<int:pk>/', views.OcasionDetailView.as_view(), name='ocasion_d'),
+    path('estilo/<int:pk>/', views.EstiloDetailView.as_view(), name='estilo_d'),
+    path('outfit/<int:pk>/', views.OutfitDetailView.as_view(), name='outfit_d'),
     
     # path ('prenda/<int:pk>/', views.PrendaDetailView.as_view(), name='prenda_d'),
     
     #LIST VIEWS
-    path ('home/', views.HomeListView.as_view(), name='estilo_l'),
+    path('home/', views.HomeListView.as_view(), name='estilo_l'),
     
     # path ('prenda/', views.PrendaListView.as_view(), name='prenda_l'),
     # path ('ocasion', views.OcasionListView.as_view(), name='ocasion_l'),

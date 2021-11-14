@@ -84,14 +84,13 @@ class HomeListView(ListView):
 def contacto(request):
     if request.method == "POST":  #POST oculta los datos (enviados a través del formulario), a diferencia del GET que los muestra en la URL 
         form = FormularioContacto(request.POST)
-        if form.is_valid(): #si los datos son correctos (están validados)
+        if form.is_valid(): #si los datos son correctos (están validados) = true
             infForm = form.cleaned_data #guardar en infForm los datos del formulario
             
             sub = "Contacto"
-            msg = "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo']   #TODO se concatenan así los strings?
+            msg = "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo']   
             fromemail = "outfitshowroomapp@gmail.com"
             recipientlist = infForm['correo']
-            
 
             send_mail(sub, msg, fromemail, [recipientlist])
 
@@ -100,8 +99,6 @@ def contacto(request):
             # "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo'],
             # "outfitshowroomapp@gmail.com",
             # [infForm['correo']],)
-
-        
 
             return render(request, "enviado.html")
     else:
