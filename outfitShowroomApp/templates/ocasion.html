@@ -5,12 +5,12 @@
 			
 				<nav id="nav">
 					<ul>
-						<li><a href="../../home">Home</a></li>
+						<li><a href="../../home">Inicio</a></li>
 						<li>
 							<a href="" class="icon fa-angle-down">Lista de outfits asociados</a>
 							<ul>
 								{%for i in outfit_list%} <!-- ERROR FALTA QUE SE LISTE OUTFITS DE LA BBDD-->
-								<li><a href="TODO">{{i.nombre}}</a></li>
+								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
 								{%endfor%}
 							</ul>
 						</li>

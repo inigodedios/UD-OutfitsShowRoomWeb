@@ -1,18 +1,19 @@
 {% extends 'base.html'%}
 {% load static %}
 	<body class="landing">
+
 		<!-- Header -->
 			{%block nav%}
 			<header id="header" class="alt skel-layers-fixed name=header">
 				
 				<nav id="nav">
 					<ul>
-						<li><a href="#header">Home</a></li>
+						<li><a href="#header">Inicio</a></li>
 						<li>
 							<a href="" class="icon fa-angle-down">Ocasiones</a>
 							<ul>
 								{%for i in ocasion_list%}
-								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
+								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> 
 								{% endfor %}
 							</ul>
 							
@@ -21,7 +22,7 @@
 							<a href="" class="icon fa-angle-down">Estilos</a>
 							<ul>
 								{%for i in estilo_list%}
-								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
+								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> 
 								{% endfor %}
 							</ul>
 							
@@ -30,7 +31,7 @@
 							<a href="" class="icon fa-angle-down">Outfits</a>
 							<ul>
 								{%for i in outfit_list%}
-								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li> <!-- Algo estamos implantando mal de scripts que no sed espliega el menu-->
+								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li> 
 								{% endfor %}
 							</ul>
 						</li>
@@ -44,10 +45,10 @@
 			{%block banner%}
 			<section id="banner">
 				<div class="inner">
-					<h2>Outfit Showroom!</h2>
-					<p>Clothes is what you buy, fashion is what you do with them</p>
+					<h2>OUTFIT SHOWROOM</h2>
+					<p>La ropa es lo que compras, la moda es lo que haces con ella.</p>
 					<ul class="actions">
-						<li><a href="#one" class="button big scrolly">Learn More</a></li>
+						<li><a href="#one" class="button big scrolly">Saber más</a></li>
 					</ul>
 				</div>
 			</section>

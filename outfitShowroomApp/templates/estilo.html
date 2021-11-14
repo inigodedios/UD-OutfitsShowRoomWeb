@@ -6,14 +6,13 @@
 			<header id="header" class="skel-layers-fixed">
 				<nav id="nav">
 					<ul>
-						<li><a href="../../home">Home</a></li>
+						<li><a href="../../home">Inicio</a></li>
 						<li>
 							<a href="" class="icon fa-angle-down">Outfits asociados</a>
 							<ul>
 								{%for i in outfit_list%}
-								<li><a href="">{{i.nombre}}</a></li>
+								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
 								{%endfor%}
-								
 								</li>
 							</ul>
 						</li>

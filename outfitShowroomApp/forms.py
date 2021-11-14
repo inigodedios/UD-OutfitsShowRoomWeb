@@ -10,6 +10,5 @@ class FormularioContacto(forms.Form):
 
     ACEPT=[('Acepto el tratamiento de mis datos.','Acepto el tratamiento de mis datos.'),]
 
-    condiciones = forms.ChoiceField(choices=ACEPT, widget=forms.RadioSelect)
-    
+    #condiciones = forms.ChoiceField(choices=ACEPT, widget=forms.RadioSelect)    #TODO no se puede seleccionar 
 

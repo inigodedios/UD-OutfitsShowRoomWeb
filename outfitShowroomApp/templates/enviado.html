@@ -6,35 +6,9 @@
 			
 				<nav id="nav">
 					<ul>
-						<li><a href="../home">Home</a></li> 
+						<li><a href="../home">Inicio</a></li> 
 						<li>
 							<a href="" >Formulario de Contacto</a>
-						</li>
-                        <li>
-							<a href="" class="icon fa-angle-down">Ocasiones</a>
-							<ul>
-								{%for i in ocasion_list%}
-								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> <!--NO CARGAN NOMBRES DE LAS LISTAS-->
-								{% endfor %}
-							</ul>
-							
-						</li>
-						<li>
-							<a href="" class="icon fa-angle-down">Estilos</a>
-							<ul>
-								{%for i in estilo_list%}
-								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
-							
-						</li>
-						<li>
-							<a href="" class="icon fa-angle-down">Outfits</a>
-							<ul>
-								{%for i in outfit_list%}
-								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
 						</li>
 					</ul>
 				</nav>
@@ -64,7 +38,7 @@
 							<!-- Content -->
 							
 								<section id="content">
-									<a href="#" class="image fit"><img src="images/slide02.jpg" alt="" /></a>
+									
 									<h3>Contacto</h3>
 									<p>Datos enviados.<br><br>A continuación, recibirá un correo confirmando el correcto recibimiento de los mismos. <br>Si no recibe nada, vuelva a rellenar el formulario de contacto para garantizarle que, finalmente, recibimos sus datos.<br>¡Gracias!</p>
 								</section>
