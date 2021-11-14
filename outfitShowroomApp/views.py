@@ -5,7 +5,7 @@ from django.views.generic import DetailView, ListView
 from django.template import Template, Context, context
 from .models import Prenda, Ocasion, Estilo, Outfit
 from outfitShowroomApp.forms import FormularioContacto
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 
 
 
@@ -91,8 +91,18 @@ def contacto(request):
             msg = "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo']   #TODO se concatenan así los strings?
             fromemail = "outfitshowroomapp@gmail.com"
             recipientlist = infForm['correo']
+            
 
             send_mail(sub, msg, fromemail, [recipientlist])
+
+            # email = EmailMessage(
+            # "Contacto",
+            # "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo'],
+            # "outfitshowroomapp@gmail.com",
+            # [infForm['correo']],)
+
+        
+
             return render(request, "enviado.html")
     else:
         form = FormularioContacto()
