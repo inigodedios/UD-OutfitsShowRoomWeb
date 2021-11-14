@@ -1,11 +1,10 @@
-{% extends 'base_basic.html'%}
-{%block contenido%} 
+{% extends 'base.html'%}
 		<!-- Header -->
+		{%block header%} 
 			<header id="header" class="skel-layers-fixed">
 				<nav id="nav">
 					<ul>
 						<li><a href="../../home">Home</a></li>
-					
 						<li>
 							<a href="" class="icon fa-angle-down">Ocasiones asociadas</a>
 							<ul>
@@ -25,10 +24,10 @@
 					</ul>
 				</nav>
 			</header>
-
+		{%endblock%}
 		<!-- Main -->
+		{%block outfits%} 
 			<section id="main" class="wrapper style1">
-				
 				<header class="major">
 					{%block outfit_info%}
 					<h2>{{outfit.nombre}}</h2>
@@ -36,7 +35,6 @@
 					{%endblock%}
 				</header>
 				<div class="container">
-						
 					<!-- Content -->
 						<section id="content">
 							<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
@@ -51,31 +49,10 @@
 								<li>Blandit massa non blandit tempor interdum.</li>
 								<li>Lacinia mattis arcu nascetur lobortis.</li>
 							</ul>
-						</section>
-								
+						</section>		
 				</div>
 			</section>
-			
+		{%endblock%}
 		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Envelope</span></a></li>
-				</ul>
-				<ul class="menu">
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Terms of Use</a></li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-				<span class="copyright">
-			&copy; Copyright. All rights reserved. Design by <a href="http://www.html5webtemplates.co.uk">Responsive Web Templates</a>	
-				</span>
-			</footer>
-
 	</body>
 </html>
-{%endblock%}

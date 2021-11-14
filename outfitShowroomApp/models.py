@@ -2,9 +2,11 @@ from django.db import models
 from datetime import datetime
 
 # Create your models here.
+
 class Prenda(models.Model):
     #Campo para la relación
     #models.ForeignKey(Empresa, on_delete=models.CASCADE)
+    
     TALLAS = (
         ('S', 'Small'),
         ('M', 'Medium'),

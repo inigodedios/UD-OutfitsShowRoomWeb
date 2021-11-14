@@ -1,18 +1,18 @@
 {% extends 'base.html'%}
-
+<html>
+	<body>
 		<!-- Header -->
 		{%block header%}
 			<header id="header" class="skel-layers-fixed">
 				<nav id="nav">
 					<ul>
-						<li><a href="../../home">Home</a></li>
+						<li><a href="../../home">Inicio</a></li>
 						<li>
 							<a href="" class="icon fa-angle-down">Outfits asociados</a>
 							<ul>
 								{%for i in outfit_list%}
-								<li><a href="">{{i.nombre}}</a></li>
+								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
 								{%endfor%}
-								
 								</li>
 							</ul>
 						</li>
@@ -35,7 +35,6 @@
 				<div class="container">
 					<div class="row 150%">
 						<div class="8u 12u$(2)">
-
 							<!-- Content -->
 								<section id="content">
 									<a href="#" class="image fit"><img src="images/slide03.jpg" alt="" /></a>
@@ -51,10 +50,10 @@
 										<li>Lacinia mattis arcu nascetur lobortis.</li>
 									</ul>
 								</section>
-								
 						</div>
 						<div class="4u 12u$(2)">
 						
+
 							<!-- Sidebar -->
 								<section id="sidebar">
 									<section>
@@ -78,13 +77,10 @@
 										</footer>
 									</section>
 								</section>
-
 						</div>
 					</div>
 				</div>
 			{%endblock%}
 			</section>
-		
-
 	</body>
 </html>
