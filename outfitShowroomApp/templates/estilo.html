@@ -1,32 +1,8 @@
-{% load static %}
-<!DOCTYPE HTML>
-<!-- Plantilla base -> right-sidebar-html-->
-<html>
-	<head>
-		<title> </title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="{% static '../static/js/jquery.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.dropotron.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.scrollgress.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.scrolly.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.slidertron.min.js' %}"></script>
-		<script src="{% static '../static/js/skel.min.js' %}"></script>
-		<script src="{% static '../static/js/skel-layers.min.js' %}"></script>
-		<script src="{% static '../static/js/init.js' %}"></script>
-		<link rel="stylesheet" href="{% static '../static/css/skel.css' %}" />
-		<link rel="stylesheet" href="{% static '../static/css/style.css' %} " />
-		<link rel="stylesheet" href="{% static '../static/css/style-xlarge.css' %}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body>
+{% extends 'base2.html'%}
 
 		<!-- Header -->
+		{%block header%}
 			<header id="header" class="skel-layers-fixed">
-		<h1><a href="index.html">HTML5 Website <span>by Html5webtemplates.co.uk</span></a></h1>	
 				<nav id="nav">
 					<ul>
 						<li><a href="../../home">Home</a></li>
@@ -50,19 +26,23 @@
 					</ul>
 				</nav>
 			</header>
+		{%endblock%}
 
 		<!-- Main -->
+			{%block categoria_info%}	
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					{%block estilo_info%}
 					<h2>{{estilo.nombre}}</h2>
 					<p>{{estilo.desc}}</p>
-					{%endblock%}
 				</header>
+			{%endblock%}
+
+				
+				{%block categoria_info_extra%}
 				<div class="container">
 					<div class="row 150%">
 						<div class="8u 12u$(2)">
-						
+
 							<!-- Content -->
 								<section id="content">
 									<a href="#" class="image fit"><img src="images/slide03.jpg" alt="" /></a>
@@ -109,27 +89,9 @@
 						</div>
 					</div>
 				</div>
+			{%endblock%}
 			</section>
-			
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Envelope</span></a></li>
-				</ul>
-				<ul class="menu">
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Terms of Use</a></li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-				<span class="copyright">
-						&copy; Copyright. All rights reserved. Design by <a href="http://www.html5webtemplates.co.uk">Responsive Web Templates</a>
-				</span>
-			</footer>
+		
 
 	</body>
 </html>

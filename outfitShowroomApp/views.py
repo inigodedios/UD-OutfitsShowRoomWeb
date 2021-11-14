@@ -16,7 +16,7 @@ class OcasionDetailView(DetailView):
     template_name= 'ocasion.html'        
     def get_context_data(self, **kwargs):
         context = super(OcasionDetailView, self).get_context_data(**kwargs)
-        context['outfit_list'] = Outfit.objects.filter(outfits=self.object.id_oc)
+        context['outfit_list'] = Outfit.objects.filter(estilo_id=self.object.id_oc) #No funciona
         return context
     
 

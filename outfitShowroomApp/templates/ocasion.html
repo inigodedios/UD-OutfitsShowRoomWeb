@@ -1,51 +1,31 @@
-{% load static %}
-<!DOCTYPE HTML>
-<!-- Plantilla base -> left-sidebar-html-->
-<html>
-	<head>
-		<title> </title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="{% static '../static/js/jquery.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.dropotron.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.scrollgress.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.scrolly.min.js' %}"></script>
-		<script src="{% static '../static/js/jquery.slidertron.min.js' %}"></script>
-		<script src="{% static '../static/js/skel.min.js' %}"></script>
-		<script src="{% static '../static/js/skel-layers.min.js' %}"></script>
-		<script src="{% static '../static/js/init.js' %}"></script>
-
-		<link rel="stylesheet" href="{% static '../static/css/skel.css' %}" />
-		<link rel="stylesheet" href="{% static '../static/css/style.css' %} " />
-		<link rel="stylesheet" href="{% static '../static/css/style-xlarge.css' %}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body>
-
+{% extends 'base2.html'%}
 		<!-- Header -->
+		{%block header%}
 			<header id="header" class="skel-layers-fixed">
-			<h1><a href="index.html">HTML5 Website <span>by Html5webtemplates.co.uk</span></a></h1>	
+			
 				<nav id="nav">
-					{%block ocasion_outfits%}
+					
 					<ul>
 						<li><a href="../../home">Home</a></li> <!-- TODO preguntar como se redirige a paginas anteriores. ¿Es así?-->
 					</ul>
-					{%endblock%}	
+						
 				</nav>
 			</header>
-
+		{%endblock%}
+		
 		<!-- Main -->
+		{%block categoria_info%}
 			<section id="main" class="wrapper style1">
-
 				<header class="major">
 					{%block ocasion_info%}
 					<h2>{{ocasion.nombre}}</h2>
 					<p>{{ocasion.desc}}</p>
 					{%endblock%}
 				</header>
+		{%endblock%}
+		
+
+		{%block categoria_info_extra%}
 				<div class="container">
 					<div class="row 150%">
 						<div class="4u 12u$(2)">
@@ -78,22 +58,20 @@
 						<div class="8u 12u$(2) important(2)">
 						
 							<!-- Content -->
-							{%block prueba%}
+							
 								<section id="content">
 									<a href="#" class="image fit"><img src="images/slide02.jpg" alt="" /></a>
 									<h3>Ocasiones asociadas</h3>
 									
 									{%for i in outfit_list %}
 									<ul>
-										
 										<li>{{i.nombre}}</li>
-										
 									</ul>
 									{%endfor%}
 
 									<h3>Tipos de estilos para los que estan pensado</h3>
 									<p>
-
+									<!-- FALTA QUE SE LISTEN COSAS DE LA BBDD-->
 									</p>
 									<ul>
 										<li>Faucibus orci lobortis ac adipiscing integer.</li>
@@ -104,11 +82,12 @@
 									</ul>
 									
 								</section>
-							{%endblock%}
+							
 								
 						</div>
 					</div>
 				</div>
+				{%endblock%}
 			</section>
 			
 		<!-- Footer -->
