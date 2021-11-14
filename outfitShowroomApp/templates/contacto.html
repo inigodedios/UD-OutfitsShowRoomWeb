@@ -7,35 +7,6 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../home">Home</a></li> <!-- TODO no funciona link a home-->
-						<li>
-							<a href="" >Formulario de Contacto Beta</a>
-						</li>
-                        <li>
-							<a href="" class="icon fa-angle-down">Ocasiones</a>
-							<ul>
-								{%for i in ocasion_list%}
-								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
-							
-						</li>
-						<li>
-							<a href="" class="icon fa-angle-down">Estilos</a>
-							<ul>
-								{%for i in estilo_list%}
-								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
-							
-						</li>
-						<li>
-							<a href="" class="icon fa-angle-down">Outfits</a>
-							<ul>
-								{%for i in outfit_list%}
-								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
-						</li>
 					</ul>
 				</nav>
 			</header>
