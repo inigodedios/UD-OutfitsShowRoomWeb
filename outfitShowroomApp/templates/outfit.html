@@ -5,21 +5,20 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../../home">Home</a></li>
+					
 						<li>
 							<a href="" class="icon fa-angle-down">Ocasiones asociadas</a>
 							<ul>
-
 							{%for i in ocasion_list%}
-								<li><a href="left-sidebar.html">{{i.nombre}}</a></li>
+								<li><a href="../../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li>
 							{%endfor%}
-								
 							</ul>
 						</li>
 						<li>
 							<a href="" class="icon fa-angle-down">Tipos de estilo asociados</a>
 							<ul>
 								{%for i in estilo_list%}
-								<li><a href="left-sidebar.html">{{i.nombre}}</a></li>
+								<li><a href="../../estilo/{{i.id_est}}">{{i.nombre}}</a></li>
 								{%endfor%}
 							</ul>
 						</li>

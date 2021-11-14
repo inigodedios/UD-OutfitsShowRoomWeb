@@ -71,8 +71,6 @@ class Outfit(models.Model):
     #RELACIONES BASES DE DATOS
     estilo = models.ForeignKey(Estilo, null=False, blank=False, on_delete=models.CASCADE, related_name='outfits') #related_name indica el nombre de la relación (outfits de un determinado estilo - estilo.outfits.all(), estilo.outfits.count(), estilo.outfits.filter(precio>50).all())
     prendas = models.ManyToManyField(Prenda, related_name='outfitsprendas')
-    
-    
     ocasiones = models.ManyToManyField(Ocasion, related_name='outfitsocasiones')
 
     def __str__(self):

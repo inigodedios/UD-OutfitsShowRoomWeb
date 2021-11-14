@@ -4,11 +4,17 @@
 			<header id="header" class="skel-layers-fixed">
 			
 				<nav id="nav">
-					
 					<ul>
-						<li><a href="../../home">Home</a></li> <!-- TODO preguntar como se redirige a paginas anteriores. ¿Es así?-->
+						<li><a href="../../home">Home</a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Lista de outfits asociados</a>
+							<ul>
+								{%for i in outfit_list%} <!-- ERROR FALTA QUE SE LISTE OUTFITS DE LA BBDD-->
+								<li><a href="TODO">{{i.nombre}}</a></li>
+								{%endfor%}
+							</ul>
+						</li>
 					</ul>
-						
 				</nav>
 			</header>
 		{%endblock%}
@@ -61,18 +67,10 @@
 							
 								<section id="content">
 									<a href="#" class="image fit"><img src="images/slide02.jpg" alt="" /></a>
-									<h3>Ocasiones asociadas</h3>
-									
-									{%for i in outfit_list %}
-									<ul>
-										<li>{{i.nombre}}</li>
-									</ul>
-									{%endfor%}
-
-									<h3>Tipos de estilos para los que estan pensado</h3>
-									<p>
-									<!-- FALTA QUE SE LISTEN COSAS DE LA BBDD-->
-									</p>
+									<h3>Lorem, ipsum.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi nulla est harum.</p>
+									<h3>Lorem, ipsum dolor.</h3>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptate debitis voluptatum maxime doloremque?</p>
 									<ul>
 										<li>Faucibus orci lobortis ac adipiscing integer.</li>
 										<li>Col accumsan arcu mi aliquet placerat.</li>

@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, render, get_list_or_404
 from django.http import HttpResponse
 from django.views.generic import DetailView, ListView
@@ -16,46 +17,33 @@ class OcasionDetailView(DetailView):
     template_name= 'ocasion.html'        
     def get_context_data(self, **kwargs):
         context = super(OcasionDetailView, self).get_context_data(**kwargs)
-        context['outfit_list'] = Outfit.objects.filter(estilo_id=self.object.id_oc) #No funciona
+        #context['outfit_list'] = Outfit.objects.filter(outfitsocasiones=self.object.id_oc) #ERROR No funciona
         return context
     
-
-class OutfitDetailView(DetailView):
-    template_name= 'outfit.html'
-    model=Outfit
-    def get_context_data(self, **kwargs):
-        context = super(OutfitDetailView, self).get_context_data(**kwargs)
-        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Preguntar, no entiendo al 100% como hace la relacion entre las tabals intermedias
-        context['estilo_list'] = Estilo.objects.filter(outfits=self.object.estilo_id)
-        return context
-
-
-
-
-
-
 class EstiloDetailView(DetailView):
     template_name= 'estilo.html'
     model=Estilo
+    def get_context_data(self, **kwargs):
+        context = super(EstiloDetailView, self).get_context_data(**kwargs)
+        #context['outfit_list'] = Outfit.objects.filter(outfits=self.object.id_est) #ERROR No funciona
+        return context
     
-
 class OutfitDetailView(DetailView):
     template_name= 'outfit.html'
     model=Outfit
     def get_context_data(self, **kwargs):
         context = super(OutfitDetailView, self).get_context_data(**kwargs)
-        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Preguntar, no entiendo al 100% como hace la relacion entre las tabals intermedias
-        context['estilo_list'] = Estilo.objects.filter(outfits=self.object.estilo_id)
+        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Funciona bien
+        context['estilo_list'] = Estilo.objects.filter(outfits=self.object.estilo_id) #Funciona bien
         return context
 
 
 #DETAIL LISTS
 class HomeListView(ListView):
-    # Añadir en la base de datos una tabla con la la descripcion, logo... de la empresa para asignarle un model infoEmppresa, no estilo --> sería mas correcto
+    # TODO Añadir en la base de datos una tabla con la la descripcion, logo... de la empresa para asignarle un model infoEmppresa, no estilo --> sería mas correcto
     template_name= 'home.html'
     model = Estilo
-    
-
+    QuerySet = Estilo.objects.order_by('nombre') #TODO Innecesario. SIn esta linea tambien tenemos la lista estilo_list
     def get_context_data(self, **kwargs):
         context = super(HomeListView, self).get_context_data(**kwargs)
         context['ocasion_list'] = Ocasion.objects.order_by('id_oc')

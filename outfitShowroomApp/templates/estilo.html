@@ -7,19 +7,12 @@
 					<ul>
 						<li><a href="../../home">Home</a></li>
 						<li>
-							<a href="" class="icon fa-angle-down">Layouts</a>
+							<a href="" class="icon fa-angle-down">Outfits asociados</a>
 							<ul>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-								<li>
-									<a href="">Submenu</a>
-									<ul>
-										<li><a href="#">Option 1</a></li>
-										<li><a href="#">Option 2</a></li>
-										<li><a href="#">Option 3</a></li>
-										<li><a href="#">Option 4</a></li>
-									</ul>
+								{%for i in outfit_list%}
+								<li><a href=""></a></li>
+								{%endfor%}
+								
 								</li>
 							</ul>
 						</li>
