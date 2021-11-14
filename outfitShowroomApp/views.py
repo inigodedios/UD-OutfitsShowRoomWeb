@@ -17,7 +17,7 @@ class OcasionDetailView(DetailView):
     template_name= 'ocasion.html'        
     def get_context_data(self, **kwargs):
         context = super(OcasionDetailView, self).get_context_data(**kwargs)
-        #context['outfit_list'] = Outfit.objects.filter(outfitsocasiones=self.object.id_oc) #ERROR No funciona
+        context['outfit_list'] = Outfit.objects.filter(ocasiones=self.object.id_oc) #Funciona bien
         return context
     
 class EstiloDetailView(DetailView):
@@ -25,7 +25,7 @@ class EstiloDetailView(DetailView):
     model=Estilo
     def get_context_data(self, **kwargs):
         context = super(EstiloDetailView, self).get_context_data(**kwargs)
-        #context['outfit_list'] = Outfit.objects.filter(outfits=self.object.id_est) #ERROR No funciona
+        context['outfit_list'] = Outfit.objects.filter(estilo=self.object.id_est) #ERROR No funciona
         return context
     
 class OutfitDetailView(DetailView):
