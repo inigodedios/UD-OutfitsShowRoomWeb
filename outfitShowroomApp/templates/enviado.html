@@ -1,6 +1,98 @@
-<html>
-    <body>
-        <h1>Contacto</h1>
-        <p>Datos enviados.<br><br>A continuación, recibirá un correo confirmando el correcto recibimiento de los mismos. <br>Si no recibe nada, vuelva a rellenar el formulario de contacto para garantizarle que, finalmente, recibimos sus datos.<br>¡Gracias!</p>
-    </body>
+{% extends 'base.html'%}
+{% load static %}
+		<!-- Header -->
+		{%block header%}
+			<header id="header" class="skel-layers-fixed">
+			
+				<nav id="nav">
+					<ul>
+						<li><a href="../home">Home</a></li> 
+						<li>
+							<a href="" >Formulario de Contacto</a>
+						</li>
+                        <li>
+							<a href="" class="icon fa-angle-down">Ocasiones</a>
+							<ul>
+								{%for i in ocasion_list%}
+								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> <!--NO CARGAN NOMBRES DE LAS LISTAS-->
+								{% endfor %}
+							</ul>
+							
+						</li>
+						<li>
+							<a href="" class="icon fa-angle-down">Estilos</a>
+							<ul>
+								{%for i in estilo_list%}
+								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> 
+								{% endfor %}
+							</ul>
+							
+						</li>
+						<li>
+							<a href="" class="icon fa-angle-down">Outfits</a>
+							<ul>
+								{%for i in outfit_list%}
+								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li> 
+								{% endfor %}
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+		{%endblock%}
+		
+		<!-- Main -->
+		{%block categoria_info%}
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					{%block form_info%}
+					<h2>Formulario de Contacto</h2>
+					<!--{{ocasion.desc}}-->
+					{%endblock%}
+				</header>
+                
+
+            
+        {%endblock%}
+		
+
+		{%block categoria_info_extra%}
+				<div class="container">
+					<div class="row 150%">
+						<div class="8u 12u$(2) important(2)">
+						
+							<!-- Content -->
+							
+								<section id="content">
+									<a href="#" class="image fit"><img src="images/slide02.jpg" alt="" /></a>
+									<h3>Contacto</h3>
+									<p>Datos enviados.<br><br>A continuación, recibirá un correo confirmando el correcto recibimiento de los mismos. <br>Si no recibe nada, vuelva a rellenar el formulario de contacto para garantizarle que, finalmente, recibimos sus datos.<br>¡Gracias!</p>
+								</section>
+						</div>
+					</div>
+				</div>
+				{%endblock%}
+			</section>
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Envelope</span></a></li>
+				</ul>
+				<ul class="menu">
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<span class="copyright">
+				&copy; Copyright. All rights reserved. Design by <a href="http://www.html5webtemplates.co.uk">Responsive Web Templates</a>	
+				</span>
+			</footer>
+
+	</body>
 </html>
