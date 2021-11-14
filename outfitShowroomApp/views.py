@@ -23,14 +23,19 @@ class OcasionDetailView(DetailView):
 class EstiloDetailView(DetailView):
     template_name= 'estilo.html'
     model=Estilo
+    queryset = Estilo.objects.order_by('-nombre') #estilo_list
     def get_context_data(self, **kwargs):
         context = super(EstiloDetailView, self).get_context_data(**kwargs)
         context['outfit_list'] = Outfit.objects.filter(estilo=self.object.id_est) #ERROR No funciona
         return context
     
+    # def get_queryset(self):
+    #     return self.queryset.filter(outfits=self.model.id_est)
+    
 class OutfitDetailView(DetailView):
     template_name= 'outfit.html'
     model=Outfit
+    
     def get_context_data(self, **kwargs):
         context = super(OutfitDetailView, self).get_context_data(**kwargs)
         context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Funciona bien
@@ -43,7 +48,6 @@ class HomeListView(ListView):
     # TODO Añadir en la base de datos una tabla con la la descripcion, logo... de la empresa para asignarle un model infoEmppresa, no estilo --> sería mas correcto
     template_name= 'home.html'
     model = Estilo
-    QuerySet = Estilo.objects.order_by('nombre') #TODO Innecesario. SIn esta linea tambien tenemos la lista estilo_list
     def get_context_data(self, **kwargs):
         context = super(HomeListView, self).get_context_data(**kwargs)
         context['ocasion_list'] = Ocasion.objects.order_by('id_oc')

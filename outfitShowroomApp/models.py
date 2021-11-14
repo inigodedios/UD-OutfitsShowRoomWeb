@@ -35,7 +35,6 @@ class Prenda(models.Model):
     id_pr = models.AutoField(auto_created=True, primary_key=True)
     nombre = models.CharField(max_length=4000)
     disenador = models.CharField(max_length=4000)
-    #date = models.DateField(_("Date"), default=datetime.date.today) #TODO especificar que solo queremos mes y año
     talla = models.CharField(max_length=1, choices=TALLAS)
     precio = models.DecimalField(decimal_places=2, max_digits=5, default=0)
     tipo_prenda = models.CharField(max_length=100, choices=TIPOS_PRENDA, default=" ") #TODO ¿Por qué es encesario poner un default en tipo y no en talla?

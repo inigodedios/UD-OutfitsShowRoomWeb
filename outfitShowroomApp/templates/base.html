@@ -1,11 +1,19 @@
 {% extends 'base_basic.html'%}
 
+<!-- Base para la pagina home unicamente -->
 {%block contenido%}
 
 	<body class="landing">
 		<!-- Header -->
-        {%block nav%}
+        {%block header%} 
+		{%endblock%}
+
+		{%block nav%}
         {%endblock%}
+
+	<!-- Main	 -->
+		{%block categoria_info%}{%endblock%} <!--Para la plantilla ocasion, estilo-->
+		{%block categoria_info_extra%}{%endblock%}<!--Para la plantilla ocasion, estilo-->
 
 		<!-- Banner -->
         {%block banner%}

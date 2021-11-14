@@ -1,7 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
 	<body class="landing">
-		<!-- TODO mirar porque se ha cambiado el formato de los textos-> negrtia, tamaño... Mirar en style.css !!!-->
 		<!-- Header -->
 			{%block nav%}
 			<header id="header" class="alt skel-layers-fixed name=header">
@@ -59,21 +58,21 @@
 				<div class="container">
 					<header class="major">
 						<h2>GALERÍA 2021</h2>
-						<p>Outfit Showroom! is a company dedicated to creating outfits based on<br /> <!-- Igual esto en vez de darle estilo/formato mediante br podriamos centrarlo desde css TODO -->
+						<p>Outfit Showroom! is a company dedicated to creating outfits based on<br /> <!-- Igual esto en vez de darle estilo/formato mediante br podriamos centrarlo desde css (viene así por defecto) TODO -->
 						occasions and styles. To do this, we have a great team of experts in trends.<br /></p>
 					</header>
 					<div class="slider">
 						<span class="nav-previous"></span>
 						<div class="viewer">
 							<div class="reel">
-								<div class="slide"> <!-- TODO Poner outfit y comprobar que se vean bien-->
-									<img src="{%static '../static/images_ropa/CBLS JCKT 07/Captura de pantalla 2021-11-11 a las 23.54.51.png' %}" alt="" img/>
+								<div class="slide"> <!-- Cuando se vuelquen todas las imagens a bbdd, se pondra con un nombre adecuado-->
+									<img src="{%static '../static/images_ropa/EFECTO PIEL/Captura de pantalla 2021-11-12 a las 0.15.50.png' %}" alt="" />
 								</div>
 								<div class="slide">
-									<img src="images/slide02.jpg" alt="" />
+									<img src="{%static '../static/images_ropa/CRUZADA EFECTO PIEL/Captura de pantalla 2021-11-12 a las 0.06.31.png' %}" alt="" /> 
 								</div>
 								<div class="slide">
-									<img src="images/slide03.jpg" alt="" />
+									<img src="{%static '../static/images_ropa/Asimetrico/Asimetrico5.png' %}"  alt="" img/> 
 								</div>
 							</div>
 						</div>
@@ -91,7 +90,7 @@
 						{%for i in estilo_list%}
 						<div class="4u 6u(2) 12u$(3)"> 
 							<section class="feature fa-briefcase"> <!-- TODO utiliza "feature fa-..." para asignar iconos a cada bloque, entre otras cosas. Antes habia 6 bloques en el HTML pero con el for lo hemos redudico a 1 ya que lo multiplica por 6. Hay que conseguir que salga un icono distinto en cada bloque (Mirar codigo comentado)-->	
-								<h3>{{i.nombre}}</h3> <!-- TODO poner link que lleve la ventana de estilo Casual-->
+								<h3>{ {i.nombre}}</h3> <!-- TODO poner link que lleve la ventana de estilo Casual-->
 								<p>{{i.desc}}</p>
 							</section>
 						</div>

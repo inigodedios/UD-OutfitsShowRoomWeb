@@ -1,4 +1,4 @@
-{% extends 'base2.html'%}
+{% extends 'base.html'%}
 
 		<!-- Header -->
 		{%block header%}
@@ -10,7 +10,7 @@
 							<a href="" class="icon fa-angle-down">Outfits asociados</a>
 							<ul>
 								{%for i in outfit_list%}
-								<li><a href=""></a></li>
+								<li><a href="">{{i.nombre}}</a></li>
 								{%endfor%}
 								
 								</li>

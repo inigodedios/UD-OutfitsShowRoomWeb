@@ -56,7 +56,7 @@ ROOT_URLCONF = 'outfitShowroom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/outfitShowroomApp/templates'], # TODO Es necesario poner esto, como no usamos loader.get_template (mipagina.html) (Video 8)
+        'DIRS': ['/outfitShowroomApp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
