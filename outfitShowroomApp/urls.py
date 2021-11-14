@@ -32,4 +32,7 @@ urlpatterns = [
     # path ('ocasion', views.OcasionListView.as_view(), name='ocasion_l'),
     # path ('estilo/', views.EstiloListView.as_view(), name='estilo_l'),
     # path ('outfit/', views.OutfitListView.as_view(), name='outfit_l'),
+
+    #FORM PATH
+    path('contact/', views.contacto, name='contactForm'),
 ]

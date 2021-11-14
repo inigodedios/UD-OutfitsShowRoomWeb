@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>Contacto</h1>
+        <p>Si le interesa trabajar de embajador de la marca, por favor, rellene el formulario con sus datos de contacto y nos pondremos en contacto con usted.</p>
+        
+        {%if form.errors %}
+        <p>Por favor, revise este campo.</p>
+        {%endif%}
+
+        <form action="" method="POST">{%csrf_token%}    <!-- CSRF PARA REDUCIR POSIBILIDADES DE HACKEO POR PARTE DE USUARIOS MALIGNOS-->
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
