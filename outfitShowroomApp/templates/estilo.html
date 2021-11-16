@@ -1,6 +1,5 @@
 {% extends 'base.html'%}
 <html>
-	<body>
 		<!-- Header -->
 		{%block header%}
 			<header id="header" class="skel-layers-fixed">
@@ -13,7 +12,6 @@
 								{%for i in outfit_list%}
 								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
 								{%endfor%}
-								</li>
 							</ul>
 						</li>
 					</ul>
@@ -28,16 +26,17 @@
 					<h2>{{estilo.nombre}}</h2>
 					<p>{{estilo.desc}}</p>
 				</header>
+			</section>
 			{%endblock%}
-
+			
 				
-				{%block categoria_info_extra%}
+			{%block categoria_info_extra%}
 				<div class="container">
 					<div class="row 150%">
 						<div class="8u 12u$(2)">
 							<!-- Content -->
 								<section id="content">
-									<a href="#" class="image fit"><img src="" alt="" /></a>
+									<a href="#" class="image fit"></a>
 									<h3>Dolore Amet Consequat</h3>
 									<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
 									<h3>Sed Magna Ornare</h3>
@@ -61,13 +60,13 @@
 										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
 										<footer>
 											<ul class="actions">
-												<li><a href="#" class="button small alt">Learn More</a></li>
+												<li><a href="#" class="button small alt">Learn More</a></li><!--<img src="" alt="" />-->
 											</ul>
 										</footer>
 									</section>
 									<hr />
 									<section>
-										<a href="#" class="image fit"><img src="" alt="" /></a>
+										<a href="#" class="image fit"></a> <!--<img src="" alt="" />-->
 										<h3>Amet Lorem Tempus</h3>
 										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
 										<footer>
@@ -81,6 +80,4 @@
 					</div>
 				</div>
 			{%endblock%}
-			</section>
-	</body>
 </html>

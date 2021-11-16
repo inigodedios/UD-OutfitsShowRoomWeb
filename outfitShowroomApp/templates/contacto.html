@@ -19,7 +19,8 @@
 					<h2>Formulario de Contacto</h2>
 					<p>Si le interesa trabajar de embajador de la marca, por favor, rellene el formulario con sus datos de contacto y nos pondremos en contacto con usted.</p> 
 					{%endblock%}
-				</header>        
+				</header>    
+			</section>    
         {%endblock%}
 		
 		{%block categoria_info_extra%}
@@ -29,7 +30,7 @@
 							<!-- Content -->
 								<section id="content">
 									<h3>Contacto</h3>
-									<form action="" method="POST">{%csrf_token%}   <!-- CSRF PARA REDUCIR POSIBILIDADES DE HACKEO POR PARTE DE USUARIOS MALIGNOS-->
+									<form method="POST">{%csrf_token%}   <!-- CSRF PARA REDUCIR POSIBILIDADES DE HACKEO POR PARTE DE USUARIOS MALIGNOS-->
                                         <table>
                                             {{form.as_table}}
                                         </table>
@@ -62,5 +63,5 @@
 				</span>
 			</footer>
 
-	</body>
+	
 </html>
