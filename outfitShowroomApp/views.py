@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.views.generic import DetailView, ListView
 from django.template import Template, Context, context
 from .models import Prenda, Ocasion, Estilo, Outfit
-from outfitShowroomApp.forms import FormularioContacto
+from .forms import FormularioContacto
 from django.core.mail import send_mail, EmailMessage
 
 
@@ -40,7 +40,7 @@ class OutfitDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         context = super(OutfitDetailView, self).get_context_data(**kwargs)
-        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Funciona bien
+        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Funciona bien - QUITAR PORQUE DE ESTA MANERA DUPLICA: SE ACCEDE MEDIANTE OUTFIT.ESTILO.NOMBRE POR EJEMPLO
         context['estilo_list'] = Estilo.objects.filter(outfits=self.object.estilo_id) #Funciona bien
         return context
 

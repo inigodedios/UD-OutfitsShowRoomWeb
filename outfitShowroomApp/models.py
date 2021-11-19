@@ -53,7 +53,7 @@ class Ocasion(models.Model):
     desc = models.CharField(max_length=4000)
     
     def __str__(self):
-        return "{} {}".format(self.id_oc, self.nombre, )
+        return "{} {}".format(self.id_oc, self.nombre, ) #TODO por qué dos {}?
 
 class Estilo(models.Model):
     id_est = models.AutoField(auto_created=True, primary_key=True)
