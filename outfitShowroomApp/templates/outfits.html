@@ -27,8 +27,10 @@
 		{%block outfits%} 
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>{{outfit.nombre}}</h2>
-					<p>{{outfit.desc}}</p>
+					
+					<h2>Lista de outfits</h2>
+					<p>¡Los mejores outfits!</p>
+					
 				</header>
 				<div class="container">
 					<!-- Content -->
@@ -39,7 +41,9 @@
 							<h3>Sed Magna Ornare</h3>
 							<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
 							<ul>
-								
+								{%for i in outfit_list%}
+								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
+								{%endfor%}
 							</ul>
 						</section>		
 				</div>

@@ -8,28 +8,14 @@
 				<nav id="nav">
 					<ul>
 						<li>
-							<a href="" class="icon fa-angle-down">Ocasiones</a>
-							<ul>
-								{%for i in ocasion_list%}
-								<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
+							<a href="../ocasion/{{i.id_oc}}">Ocasiones</a>
 						</li>
 						<li>
-							<a href="" class="icon fa-angle-down">Estilos</a>
-							<ul>
-								{%for i in estilo_list%}
-								<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
+							<a href="../estilo/{{i.id_est}}">Estilos</a>
+							
 						</li>
 						<li>
-							<a href="" class="icon fa-angle-down">Outfits</a>
-							<ul>
-								{%for i in outfit_list%}
-								<li><a href="../outfit/{{i.id_out}}">{{i.nombre}}</a></li> 
-								{% endfor %}
-							</ul>
+							<a href="../outfit/{{i.id_out}}" >Outfits</a>
 						</li>
 						<li><a href="../contact/">Formulario de Contacto (Beta)</a></li>
 					</ul>
@@ -142,7 +128,7 @@
 						</p>
 					</header>
 					<div class="row">
-						{%for i in outfit_list%}
+						{%for i in outfit_list.ocasion_list.all%}
 						<div class="4u 6u$(2) 12u$(3)">
 							<article class="box post">
 								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/Asimetrico/Asimetrico1.png' %}" alt="Outfit Asimetrico imagen 5" /></a>

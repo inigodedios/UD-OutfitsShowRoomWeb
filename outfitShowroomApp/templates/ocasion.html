@@ -6,14 +6,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../../home">Inicio</a></li>
-						<li>
-							<a href="" class="icon fa-angle-down">Lista de outfits asociados</a>
-							<ul>
-								{%for i in outfit_list%} <!-- ERROR FALTA QUE SE LISTE OUTFITS DE LA BBDD-->
-								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
-								{%endfor%}
-							</ul>
-						</li>
+						
 					</ul>
 				</nav>
 			</header>
@@ -24,10 +17,8 @@
 		{%block categoria_info%}
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					{%block ocasion_info%}
 					<h2>{{ocasion.nombre}}</h2>
 					<p>{{ocasion.desc}}</p>
-					{%endblock%}
 				</header>
 			</section>
 		{%endblock%}
@@ -74,11 +65,7 @@
 									<h3>Lorem, ipsum dolor.</h3>
 									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptate debitis voluptatum maxime doloremque?</p>
 									<ul>
-										<li>Faucibus orci lobortis ac adipiscing integer.</li>
-										<li>Col accumsan arcu mi aliquet placerat.</li>
-										<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-										<li>Blandit massa non blandit tempor interdum.</li>
-										<li>Lacinia mattis arcu nascetur lobortis.</li>
+										
 									</ul>
 									
 								</section>	

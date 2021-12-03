@@ -23,8 +23,8 @@
 			{%block categoria_info%}	
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>{{estilo.nombre}}</h2>
-					<p>{{estilo.desc}}</p>
+					<h2>Estilos</h2>
+					<p>¡Los mejores estilos!</p>
 				</header>
 			</section>
 			{%endblock%}
@@ -42,7 +42,9 @@
 									<h3>Sed Magna Ornare</h3>
 									<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
 									<ul>
-										
+										{%for i in estilo_list%}
+										<li><a href="../estilo/{{i.id_est}}">{{i.nombre}}</a></li>
+										{%endfor%}
 									</ul>
 								</section>
 						</div>

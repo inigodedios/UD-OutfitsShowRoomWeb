@@ -1,15 +1,15 @@
 {% extends 'base.html'%}
-<html>
 		<!-- Header -->
 		{%block header%}
 			<header id="header" class="skel-layers-fixed">
+			
 				<nav id="nav">
 					<ul>
 						<li><a href="../../home">Inicio</a></li>
 						<li>
-							<a href="" class="icon fa-angle-down">Outfits asociados</a>
+							<a href="" class="icon fa-angle-down">Lista de outfits asociados</a>
 							<ul>
-								{%for i in outfit_list%}
+								{%for i in outfit_list%} <!-- ERROR FALTA QUE SE LISTE OUTFITS DE LA BBDD-->
 								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
 								{%endfor%}
 							</ul>
@@ -18,37 +18,24 @@
 				</nav>
 			</header>
 		{%endblock%}
+		
 
 		<!-- Main -->
-			{%block categoria_info%}	
+		{%block categoria_info%}
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>{{estilo.nombre}}</h2>
-					<p>{{estilo.desc}}</p>
+					<h2>Ocasiones</h2>
+					<p>¡Las mejores ocasiones</p>
 				</header>
 			</section>
-			{%endblock%}
-			
-				
-			{%block categoria_info_extra%}
+		{%endblock%}
+		
+
+		{%block categoria_info_extra%}
 				<div class="container">
 					<div class="row 150%">
-						<div class="8u 12u$(2)">
-							<!-- Content -->
-								<section id="content">
-									<a href="#" class="image fit"></a>
-									<h3>Dolore Amet Consequat</h3>
-									<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-									<h3>Sed Magna Ornare</h3>
-									<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-									<ul>
-										
-									</ul>
-								</section>
-						</div>
 						<div class="4u 12u$(2)">
 						
-
 							<!-- Sidebar -->
 								<section id="sidebar">
 									<section>
@@ -56,7 +43,7 @@
 										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
 										<footer>
 											<ul class="actions">
-												<li><a href="#" class="button small alt">Learn More</a></li><!--<img src="" alt="" />-->
+												<li><a href="#" class="button small alt">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
@@ -72,8 +59,30 @@
 										</footer>
 									</section>
 								</section>
+
+						</div>
+						<div class="8u 12u$(2) important(2)">
+						
+							<!-- Content -->
+							
+								<section id="content">
+									<a href="#" class="image fit"></a><!--<img src="" alt="" />-->
+									<h3>Lorem, ipsum.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi nulla est harum.</p>
+									<h3>Lorem, ipsum dolor.</h3>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptate debitis voluptatum maxime doloremque?</p>
+									<ul>
+										{%for i in ocasion_list%}
+										<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li>
+										{%endfor%}
+									</ul>
+									
+								</section>	
 						</div>
 					</div>
 				</div>
-			{%endblock%}
+				{%endblock%}
+			</section>
+			
+		<!-- Footer -->
 </html>

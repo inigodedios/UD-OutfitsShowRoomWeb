@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render, get_list_or_404
 from django.http import HttpResponse
 from django.views.generic import DetailView, ListView
 from django.template import Template, Context, context
-from .models import Prenda, Ocasion, Estilo, Outfit
+from .models import Prenda, Ocasion, Estilo, Outfit, OutfitShowroom
 from .forms import FormularioContacto
 from django.core.mail import send_mail, EmailMessage
 
@@ -17,19 +17,25 @@ from django.core.mail import send_mail, EmailMessage
 class OcasionDetailView(DetailView):
     model=Ocasion
     template_name= 'ocasion.html'        
-    def get_context_data(self, **kwargs):
-        context = super(OcasionDetailView, self).get_context_data(**kwargs)
-        context['outfit_list'] = Outfit.objects.filter(ocasiones=self.object.id_oc) #Funciona bien
-        return context
+    context_object_name = "ocasion"
+    # {%block ocasion_info%}
+	# 				<h2>{{ocasion.nombre}}</h2>
+	# 				<p>{{ocasion.desc}}</p>
+	# 				{%for i in ocasion.outfit_set.all%}
+	# 					{{i.nombre}}
+	# 					{%endfor%}
+	# 				{%endblock%}
     
 class EstiloDetailView(DetailView):
     template_name= 'estilo.html'
+    context_object_name = "estilo" #Si no como se llamaria? porque estilo_list no funciona
     model=Estilo
-    queryset = Estilo.objects.order_by('-nombre') #estilo_list
-    def get_context_data(self, **kwargs):
-        context = super(EstiloDetailView, self).get_context_data(**kwargs)
-        context['outfit_list'] = Outfit.objects.filter(estilo=self.object.id_est) #ERROR No funciona
-        return context
+    # queryset = Estilo.objects.order_by('-nombre') #estilo_list
+    # def get_context_data(self, **kwargs):
+    #     context = super(EstiloDetailView, self).get_context_data(**kwargs)
+    #     context['outfit_list'] = Outfit.objects.order_by('-nombre')
+    #     context['ocasion_list'] = Ocasion.objects.order_by('-nombre')
+    #     return context
     
     # def get_queryset(self):
     #     return self.queryset.filter(outfits=self.model.id_est)
@@ -37,19 +43,14 @@ class EstiloDetailView(DetailView):
 class OutfitDetailView(DetailView):
     template_name= 'outfit.html'
     model=Outfit
+    context_object_name = "outfit"
     
-    def get_context_data(self, **kwargs):
-        context = super(OutfitDetailView, self).get_context_data(**kwargs)
-        context['ocasion_list'] = Ocasion.objects.filter(outfitsocasiones=self.object.id_out) #Funciona bien - QUITAR PORQUE DE ESTA MANERA DUPLICA: SE ACCEDE MEDIANTE OUTFIT.ESTILO.NOMBRE POR EJEMPLO
-        context['estilo_list'] = Estilo.objects.filter(outfits=self.object.estilo_id) #Funciona bien
-        return context
-
+ 
 
 #DETAIL LISTS
 class HomeListView(ListView):
-    # TODO Añadir en la base de datos una tabla con la la descripcion, logo... de la empresa para asignarle un model infoEmppresa, no estilo --> sería mas correcto
     template_name= 'home.html'
-    model = Estilo
+    model = OutfitShowroom
     def get_context_data(self, **kwargs):
         context = super(HomeListView, self).get_context_data(**kwargs)
         context['ocasion_list'] = Ocasion.objects.order_by('id_oc')
@@ -63,21 +64,23 @@ class HomeListView(ListView):
 # 	# def get_queryset(self):
 # 	# 	return self.queryset.filter(Prenda.precio>35)	
 
-# class OcasionListView(ListView):
-#     template_name= 'ocasion.html'
-#     model=Ocasion
-#     queryset = Ocasion.objects.order_by('nombre')
+class OcasionListView(ListView):
+    template_name= 'ocasiones.html'
+    model=Ocasion
+    queryset = Ocasion.objects.order_by('nombre')
     
-# class EstiloListView(ListView):
-#     template_name= 'index.html'
-#     model=Estilo
-#     queryset = Estilo.objects.order_by('nombre')
+class EstiloListView(ListView):
+    template_name= 'estilos.html'
+    model=Estilo
+    #queryset = Estilo.objects.order_by('nombre')
     
-# class OutfitListView(ListView):
-#     model=Outfit
-#     queryset = Outfit.objects.order_by('nombre')
-# 	# def get_queryset(self):
-# 	# 	return self.queryset.filter(Outfit.precio>35)
+class OutfitListView(ListView):
+    model=Outfit
+    template_name= 'outfits.html'
+    queryset = Outfit.objects.order_by('nombre')
+	# def get_queryset(self):
+	# 	return self.queryset.filter(Outfit.precio>35)
+
 
 
 #MODELO IMPORTADO DE FORM

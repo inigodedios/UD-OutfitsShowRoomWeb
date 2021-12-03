@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Prenda, Outfit, Ocasion, Estilo
-
+from .models import Prenda, Outfit, Ocasion, Estilo, OutfitShowroom
 """
 TODO En el panel de administración cuando añadimos un outfit, tenemos que asociarlo a uno/varios estilos y una/varias prendas.
 Problema-> a la hora de asignar a que prendas y estilos pertenecen, solo sale el id de estas. Tenemos que conseguir que salga el id y su nombre
@@ -30,10 +29,16 @@ class OutfitAdmin(admin.ModelAdmin):
     search_fields=("id_out", "nombre", "desc", "precio",) #TODO "estilo", "ocasiones", "prendas",)
     list_filter=("nombre",) #TODO "estilo", "ocasiones", "prendas",)
     ordering = ("id_out",)
-
+    
+class OutfitShowroomAdmin(admin.ModelAdmin):
+    list_display=("id_out", "nombre", "eslogan",)
+    search_fields=("id_out", "nombre", "eslogan",)
+    list_filter=("nombre",)
+    ordering = ("id_out",)
 
 # Register your models here.
 admin.site.register(Prenda, PrendaAdmin)
 admin.site.register(Ocasion, OcasionAdmin)
 admin.site.register(Estilo, EstiloAdmin)
 admin.site.register(Outfit, OutfitAdmin)
+admin.site.register(OutfitShowroom, OutfitShowroomAdmin)
