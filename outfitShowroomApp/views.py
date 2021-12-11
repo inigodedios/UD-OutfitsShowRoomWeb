@@ -30,13 +30,6 @@ class EstiloDetailView(DetailView):
     template_name= 'estilo.html'
     context_object_name = "estilo" #Si no como se llamaria? porque estilo_list no funciona
     model=Estilo
-    # queryset = Estilo.objects.order_by('-nombre') #estilo_list
-    # def get_context_data(self, **kwargs):
-    #     context = super(EstiloDetailView, self).get_context_data(**kwargs)
-    #     context['outfit_list'] = Outfit.objects.order_by('-nombre')
-    #     context['ocasion_list'] = Ocasion.objects.order_by('-nombre')
-    #     return context
-    
     # def get_queryset(self):
     #     return self.queryset.filter(outfits=self.model.id_est)
     
@@ -56,13 +49,6 @@ class HomeListView(ListView):
         context['ocasion_list'] = Ocasion.objects.order_by('id_oc')
         context['outfit_list'] = Outfit.objects.order_by('nombre')
         return context
-    
-
-# class PrendaListView(ListView):
-# 	model=Prenda
-# 	queryset = Prenda.objects.order_by('nombre') #Recuerda! -> Por convencion -> prenda_list
-# 	# def get_queryset(self):
-# 	# 	return self.queryset.filter(Prenda.precio>35)	
 
 class OcasionListView(ListView):
     template_name= 'ocasiones.html'

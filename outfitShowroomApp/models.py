@@ -70,7 +70,7 @@ class Outfit(models.Model):
     precio = models.DecimalField(decimal_places=2, max_digits=5, default=0)
 
     #RELACIONES BASES DE DATOS
-    estilo = models.ForeignKey(Estilo, null=False, blank=False, on_delete=models.CASCADE, related_name='outfits') #related_name indica el nombre de la relación (outfits de un determinado estilo - estilo.outfits.all(), estilo.outfits.count(), estilo.outfits.filter(precio>50).all())
+    estilo = models.ForeignKey(Estilo, null=False, blank=False, on_delete=models.CASCADE)
     prendas = models.ManyToManyField(Prenda)
     ocasiones = models.ManyToManyField(Ocasion)
 

@@ -5,20 +5,6 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../home">Home</a></li>
-						<!-- <li>
-							<a href="" class="icon fa-angle-down">Ocasiones asociadas</a>
-							<ul>
-								<li><a href="../../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="" class="icon fa-angle-down">Tipos de estilo asociados</a>
-							<ul>
-								
-								<li><a href="../../estilo/{{i.id_est}}">{{i.nombre}}</a></li>
-								
-							</ul>
-						</li> -->
 					</ul>
 				</nav>
 			</header>
@@ -28,19 +14,20 @@
 			<section id="main" class="wrapper style1">
 				<header class="major">
 					<h2>{{outfit.nombre}}</h2>
-					<p>{{outfit.desc}}</p>
+					
 				</header>
 				<div class="container">
 					<!-- Content -->
 						<section id="content">
 							<a href="#" class="image fit"></a><!--<img src="" alt="" />-->
-							<h3>Dolore Amet Consequat</h3>
-							<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-							<h3>Sed Magna Ornare</h3>
-							<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-							<ul>
-								
-							</ul>
+							<h3>Detalles del oufit</h3>
+							<p>{{outfit.desc}}</p>
+							<h3>Ocasiones para las que esta pensado</h3>
+							{%for ocasion in outfit.ocasiones.all%}	
+							<li>{{ocasion.nombre}}</li>
+							{%endfor%}
+							<h3>Estilos para las que esta pensado</h3>
+							<li>{{outfit.estilo.nombre}}</li>
 						</section>		
 				</div>
 			</section>

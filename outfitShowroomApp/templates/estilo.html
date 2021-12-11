@@ -6,14 +6,6 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../../home">Inicio</a></li>
-						<li>
-							<a href="" class="icon fa-angle-down">Outfits asociados</a>
-							<ul>
-								{%for i in outfit_list%}
-								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
-								{%endfor%}
-							</ul>
-						</li>
 					</ul>
 				</nav>
 			</header>
@@ -22,10 +14,18 @@
 		<!-- Main -->
 			{%block categoria_info%}	
 			<section id="main" class="wrapper style1">
+				
 				<header class="major">
 					<h2>{{estilo.nombre}}</h2>
-					<p>{{estilo.desc}}</p>
+					{%for outfit in estilo.outfit_set.all%}
+					<p>
+						{{outfit.nombre}}
+					</p>
+					{%endfor%}
+					
+					
 				</header>
+				
 			</section>
 			{%endblock%}
 			
@@ -37,13 +37,12 @@
 							<!-- Content -->
 								<section id="content">
 									<a href="#" class="image fit"></a>
-									<h3>Dolore Amet Consequat</h3>
-									<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-									<h3>Sed Magna Ornare</h3>
-									<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-									<ul>
-										
-									</ul>
+									<h3>Detalles del estilo</h3>
+									<p>{{estilo.desc}}</p>
+									<h3>Lista de ourfits asociados</h3>
+									{%for outfit in estilo.outfit_set.all%}
+									<li>{{outfit.nombre}}</li>
+									{%endfor%}
 								</section>
 						</div>
 						<div class="4u 12u$(2)">
