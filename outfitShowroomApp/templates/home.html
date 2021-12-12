@@ -179,7 +179,9 @@
 								<input v-model='correo' type="email" placeholder="Correo" name="" id="">
 								<label>¡Cuentanos tu experiencia!</label>
 								<input v-model='experiencia' type="text" placeholder="¡Cuentanos tu experiencia!">
-								<button @click="saveExperiencia" @keyup.enter="saveExperiencia" >¡ENVIAR!</button>
+								<input type="submit" @click="saveExperiencia" @keyup.enter="saveExperiencia" placeholder="ENVIAR!">
+								
+
 								<!-- EL DISABLED NO ENTIENDO LO DE :DISABLED :ID :HREF. Si hace referencia a la etiqueta, disabled que etiqueta es? -->
 							</form>
 						</section>
@@ -189,6 +191,7 @@
 			</section>
 
 			<script>
+				// SPA vs AJAX Preguntar
 				new Vue({
 					el:'#experiencia',
 					data:{
