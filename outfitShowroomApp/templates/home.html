@@ -155,11 +155,72 @@
 		<!-- CTA -->
 		{%block CTA%}
 			<section id="cta" class="wrapper style3">
-				<h2>OUTFIT SHOWROOM</h2>
-				<ul class="actions">
-					<li><a href="#" class="button big">Volver a arriba</a></li>
-				</ul>
+				<div id="app">
+					<h2>No poner nada de momento</h2>
+					<div class="estado">
+						<button v-if="state === 'default'" @click="changeState('edit')" class="button big">¡Cuentanos tu experiencia!</button>
+						<button v-else @click="changeState('default')" class="button big">Finalizar</button>
+					</div>
+					
+					<section v-if="state === 'edit'">
+						<div>
+							<br>
+							<p>AÑADIR EXPERIENCIA</p>
+						</div>
+						<section v-if="state === 'edit'">
+							<form name="experiencia"></form>
+								<label>Nombre</label>
+								<input v-model='nombre'type="text" placeholder="Nombre">
+								<label>Apellido</label>
+								<input v-model='apellido' type="text" placeholder="Apellido">
+								<label>Dirección</label>
+								<input v-model='dir' type="text" placeholder="Dirección">
+								<label>Correo</label>
+								<input v-model='correo' type="email" placeholder="Correo" name="" id="">
+								<label>¡Cuentanos tu experiencia!</label>
+								<input v-model='experiencia' type="text" placeholder="¡Cuentanos tu experiencia!">
+								<button @click="saveExperiencia" @keyup.enter="saveExperiencia" >¡ENVIAR!</button>
+								<!-- EL DISABLED NO ENTIENDO LO DE :DISABLED :ID :HREF. Si hace referencia a la etiqueta, disabled que etiqueta es? -->
+							</form>
+						</section>
+					</section>
+				</div>
+				
 			</section>
+
+			<script>
+				new Vue({
+					el:'#experiencia',
+					data:{
+						state:'default',
+						nombre:null,
+						apellido:null,
+						dir:null,
+						correo:null,
+						experiencia:null,
+						newExperiencia:'',
+						experiencias:[]
+					}, 
+				
+					methods:{
+					saveExperiencia(){
+						this.experiencias.push({
+							nombre:this.nombre,
+							apellido:this.apellido,
+							dir:this.dir,
+							correo: this.correo,
+							experiencia:this.experiencia
+						})
+						alert(this.newLanguage);
+							this.experiencia=''; //Por qué?
+					},
+				
+					changeState: function(newState){
+                    	this.state = newState;
+                	}
+					}
+				})
+  			</script>
 		{%endblock%}
 			
 		
