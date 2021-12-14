@@ -20,5 +20,5 @@ from django.urls import path, include
 #NO TOCAR
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('outfitShowroomApp/', include('outfitShowroomApp.urls'))
+    path('', include('outfitShowroomApp.urls'))
 ]
