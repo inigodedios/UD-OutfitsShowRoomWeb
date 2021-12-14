@@ -54,10 +54,10 @@
 									<img src="{%static '../static/images_ropa/Asimetrico/Asimetrico5.png' %}" alt="Outfit Asimetrico imagen 5" />
 								</div>
 								<div class="slide">
-									<img src="{%static '../static/images_ropa/Asimetrico/Asimetrico5.png' %}" alt="Outfit Asimetrico imagen 5" /> 
+									<img src="{%static '../static/images_ropa/SATINADA CRUZADA/satinada1.png' %}" alt="Outfit Asimetrico imagen 5" /> 
 								</div>
 								<div class="slide">
-									<img src="{%static '../static/images_ropa/Asimetrico/Asimetrico5.png' %}"  alt="Outfit Asimetrico imagen 5"/> 
+									<img src="{%static '../static/images_ropa/BÁSICA/basica1.png' %}"  alt="Outfit Asimetrico imagen 5"/> 
 								</div>
 							</div>
 						</div>
@@ -74,11 +74,9 @@
 					<div class="row uniform">
 						{%for ocasion in ocasion_list%}
 						<div class="4u 6u(2) 12u$(3)"> 
-							<section class="feature fa-briefcase"> <!-- TODO utiliza "feature fa-..." para asignar iconos a cada bloque, entre otras cosas. Antes habia 6 bloques en el HTML pero con el for lo hemos redudico a 1 ya que lo multiplica por 6. Hay que conseguir que salga un icono distinto en cada bloque (Mirar codigo comentado)-->	
+							<section class="feature fa-camera-retro"> <!-- TODO utiliza "feature fa-..." para asignar iconos a cada bloque, entre otras cosas. Antes habia 6 bloques en el HTML pero con el for lo hemos redudico a 1 ya que lo multiplica por 6. Hay que conseguir que salga un icono distinto en cada bloque (Mirar codigo comentado)-->	
 								<h3>{{ocasion.nombre}}</h3> <!-- TODO poner link que lleve la ventana de estilo Casual-->
 								<p>{{ocasion.desc}}</p>
-								<p>{{ocasion.outfit_set.first.nombre}}</p>
-								<p>{{ocasion.outfit_set.first.desc}}</p>
 							</section>
 						</div>
 						{%endfor%}
@@ -120,9 +118,7 @@
 		<!-- Three -->
 			{%block outfits%}
 			<section id="three" class="wrapper style1">
-				
 				<div class="container">
-					
 					<header class="major">
 						<h2>Outfits 2021</h2>
 						<p>Outfit Showroom ha llevado a cabo una selección de outfits prediseñados,<br>
@@ -130,18 +126,19 @@
 						</p>
 					</header>
 					<div class="row">
-						{%for i in outfit_list%}
+						{%for ocasion in ocasion_list%}
 						<div class="4u 6u$(2) 12u$(3)">
 							<article class="box post">
-								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/Asimetrico/Asimetrico1.png' %}" alt="Outfit Asimetrico imagen 5" /></a>
-								<h3>{{i.nombre}}</h3>
-								<p>{{i.desc}}</p>
+								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/ESTAMPADA/estampada1.png' %}" alt="Outfit Asimetrico imagen 5" /></a>
+								<h3>{{ocasion.nombre}} - {{ocasion.outfit_set.first.nombre}}</h3>
+								<p>{{ocasion.desc}}</p>
 								<ul class="actions">
 									<li><a href="#" class="button">Learn More</a></li>
 								</ul>
 							</article>
 						</div>
 						{% endfor%}
+						
 					</div>
 				</div>
 			</section>
@@ -158,8 +155,8 @@
 
 					<section v-if="state === 'edit'">
 						<section v-if="state === 'edit'">
-							<form name="experiencia"></form>
-								<label>Nombre</label>
+							<form name="experiencia" ></form>
+								<label class="formHome" >Nombre</label>
 								<input v-model='nombre'type="text" placeholder="Nombre">
 								<label>Apellido</label>
 								<input v-model='apellido' type="text" placeholder="Apellido">
@@ -169,7 +166,7 @@
 								<input v-model='correo' type="email" placeholder="Correo" name="" id="">
 								<label>¡Cuentanos tu experiencia!</label>
 								<input v-model='experiencia' type="text" @keyup.enter="saveExperiencia" placeholder="¡Cuentanos tu experiencia!">
-								<input type="submit" @click="saveExperiencia" placeholder="ENVIAR!">
+								<input type="submit" @click="saveExperiencia" class="button big" placeholder="ENVIAR!">
 							</form>
 						</section>
 					</section>

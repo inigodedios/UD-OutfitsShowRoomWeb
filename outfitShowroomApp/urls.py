@@ -23,12 +23,8 @@ urlpatterns = [
     path('estilo/<int:pk>/', views.EstiloDetailView.as_view()),
     path('outfit/<int:pk>/', views.OutfitDetailView.as_view()),
     
-    # path ('prenda/<int:pk>/', views.PrendaDetailView.as_view(), name='prenda_d'),
-    
     #LIST VIEWS
-    path('', views.HomeListView.as_view(), name='estilo_l'),
-    
-    # path ('prenda/', views.PrendaListView.as_view()),
+    path('', views.HomeListView.as_view()),
     path ('ocasion/', views.OcasionListView.as_view()),
     path ('estilo/', views.EstiloListView.as_view()),
     path ('outfit/', views.OutfitListView.as_view()),

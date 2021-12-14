@@ -3,9 +3,7 @@
 		{%block header%} 
 			<header id="header" class="skel-layers-fixed">
 				<nav id="nav">
-					<ul>
-						<li><a href="../">Home</a></li>
-					</ul>
+					<a href="../../">Home</a>
 				</nav>
 			</header>
 		{%endblock%}
@@ -25,6 +23,7 @@
 							<h3>Ocasiones para las que esta pensado</h3>
 							{%for ocasion in outfit.ocasiones.all%}	
 							<li>{{ocasion.nombre}}</li>
+							<br>
 							{%endfor%}
 							<h3>Estilos para las que esta pensado</h3>
 							<li>{{outfit.estilo.nombre}}</li>
