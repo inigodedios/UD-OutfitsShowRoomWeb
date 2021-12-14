@@ -2,8 +2,19 @@
 		<!-- Header -->
 		{%block header%}
 			<header id="header" class="skel-layers-fixed">
+			
 				<nav id="nav">
-					<a href="../../">Inicio</a>
+					<ul>
+						<li><a href="../../">Inicio</a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Lista de outfits asociados</a>
+							<ul>
+								{%for i in outfit_list%} <!-- ERROR FALTA QUE SE LISTE OUTFITS DE LA BBDD-->
+								<li><a href="../../outfit/{{i.id_out}}">{{i.nombre}}</a></li>
+								{%endfor%}
+							</ul>
+						</li>
+					</ul>
 				</nav>
 			</header>
 		{%endblock%}
@@ -14,7 +25,7 @@
 			<section id="main" class="wrapper style1">
 				<header class="major">
 					<h2>Ocasiones</h2>
-					<p>¡Las mejores ocasiones!</p>
+					<p>¡Las mejores ocasiones</p>
 				</header>
 			</section>
 		{%endblock%}
@@ -28,23 +39,22 @@
 							<!-- Sidebar -->
 								<section id="sidebar">
 									<section>
-										<br>
-										<h3>Outfit Showroom</h3>
-										<p>Outfit Showroom es una empresa española de venta de ropa cuya sede principal está en la ciudad de Bilbao. La compañía fue fundada en 2000. Es la marca principal del grupo Showroom y el minorista de indumentaria más grande del mundo con más de 3000 tiendas y con una amplia presencia en todos los continentes. Es popular debido a su concepto de “moda rápida”.</p>
+										<h3>Magna Feugiat</h3>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
 										<footer>
 											<ul class="actions">
-												<li><a href="https://www.youtube.com/watch?v=gKCmezkfWbE" class="button small alt">Learn More</a></li>
+												<li><a href="#" class="button small alt">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
 									<hr />
 									<section>
 										<a href="#" class="image fit"></a> <!--<img src="" alt="" />-->
-										<h3>Showroom</h3>
-										<p>La primera tienda Outfit Showroom abrió en 2000 en Bilbao, lugar en el que inició su actividad el Grupo y en el que se ubican los servicios centrales de la compañía a día de hoy. Durante los diez años siguientes, la cadena se extiende rápidamente por toda España y en 2010 se crea Showroom como cabecera del grupo de empresas.</p>
+										<h3>Amet Lorem Tempus</h3>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
 										<footer>
 											<ul class="actions">
-												<li><a href="https://www.inditex.com/" class="button small alt">Learn More</a></li>
+												<li><a href="#" class="button small alt">Learn More</a></li>
 											</ul>
 										</footer>
 									</section>
@@ -57,10 +67,10 @@
 							
 								<section id="content">
 									<a href="#" class="image fit"></a><!--<img src="" alt="" />-->
-									<!-- <h3>Dolore Amet Consequat</h3>
-									<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p> -->
-									<h3>Ocasiones</h3>
-									<p>A continuación puedes ver una lista con las distintas ocasiones con las que tratamos. Para cada una de ellas tenemos distintos outfits. Clicka en la ocasion para ver los outfits correspondientes.</p>
+									<h3>Compromiso</h3>
+									<p>Nos comprometemos con nuestros clientes y su necesidad por encontrar lo que necesiten en nuestra amplia gama de prendas y, por consecuente, outfits. ¡Vístete con nosotros!</p>
+									<h3>Gran variedad</h3>
+									<p>Disponemos de una amplia variedad de ocasiones disponibles para nuestros usuarios. Te ayudamos a encontrar tu conjunto ideal en función del ámbito para el que lo desees:</p>
 									<ul>
 										{%for i in ocasion_list%}
 										<li><a href="../ocasion/{{i.id_oc}}">{{i.nombre}}</a></li>
