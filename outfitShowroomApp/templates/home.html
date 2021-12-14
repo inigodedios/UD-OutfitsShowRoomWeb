@@ -77,13 +77,8 @@
 							<section class="feature fa-briefcase"> <!-- TODO utiliza "feature fa-..." para asignar iconos a cada bloque, entre otras cosas. Antes habia 6 bloques en el HTML pero con el for lo hemos redudico a 1 ya que lo multiplica por 6. Hay que conseguir que salga un icono distinto en cada bloque (Mirar codigo comentado)-->	
 								<h3>{{ocasion.nombre}}</h3> <!-- TODO poner link que lleve la ventana de estilo Casual-->
 								<p>{{ocasion.desc}}</p>
-								<p>{{ocasion.outfit_set.nombre}} NO FUNCIONA EL OUTFIT ASOCIADO</p>
-
-								
-								{%for outfit in outfit_list%}
-								<p>{{oufit.nombre}}No funcion si lo hago al reves</p>
-								{%endfor%}
-								
+								<p>{{ocasion.outfit_set.first.nombre}}</p>
+								<p>{{ocasion.outfit_set.first.desc}}</p>
 							</section>
 						</div>
 						{%endfor%}
@@ -135,7 +130,7 @@
 						</p>
 					</header>
 					<div class="row">
-						{%for i in outfit_list.ocasion_list.all%}
+						{%for i in outfit_list%}
 						<div class="4u 6u$(2) 12u$(3)">
 							<article class="box post">
 								<a href="#" class="image fit"><img src="{% static '../static/images_ropa/Asimetrico/Asimetrico1.png' %}" alt="Outfit Asimetrico imagen 5" /></a>
