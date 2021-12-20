@@ -31,4 +31,6 @@ urlpatterns = [
 
     #FORM PATH
     path('contact/', views.contacto, name='contactForm'),
+
+    #AGENDA PATH
 ]

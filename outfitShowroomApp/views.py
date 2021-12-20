@@ -6,9 +6,7 @@ from django.template import Template, Context, context
 from .models import Prenda, Ocasion, Estilo, Outfit, OutfitShowroom
 from .forms import FormularioContacto
 from django.core.mail import send_mail, EmailMessage
-
-
-
+    
 #DETAIL VIEWS
 # class PrendaDetailView(DetailView):
 #     model=Prenda
