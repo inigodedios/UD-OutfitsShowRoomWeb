@@ -154,24 +154,24 @@
 			<section id="cta" class="wrapper style3">
 				<div id="experiencia">
 					<div class="estado">
-						<button v-if="state === 'default'" @click="changeState('edit')" @click="introducirParrafo()" class="button big">¡Cuentanos tu experiencia!</button>
+						<button v-if="state === 'default'" @click="changeState('edit')" class="button big">¡Cuentanos tu experiencia!</button>
 						<button v-else @click="changeState('default')"  class="button big">Finalizar</button>
 					</div>
 
 					<section v-if="state === 'edit'">
 						<section v-if="state === 'edit'">
-							<form name="experiencia" ></form>
+							<form name="experiencia" >
 								<label class="formHome" >Nombre</label>
-								<input v-model='nombre'type="text" placeholder="Nombre">
+								<input v-model='nombre' type="text" placeholder="Nombre">
 								<label>Apellido</label>
 								<input v-model='apellido' type="text" placeholder="Apellido">
 								<label>Dirección</label>
 								<input v-model='dir' type="text" placeholder="Dirección">
 								<label>Correo</label>
-								<input v-model='correo' type="email" placeholder="Correo" name="" id="">
+								<input v-model='correo' type="email" placeholder="Correo">
 								<label>¡Cuentanos tu experiencia!</label>
-								<input v-model='experiencia' type="text" @keyup.enter="saveExperiencia" placeholder="¡Cuentanos tu experiencia!">
-								<input type="submit" @click="saveExperiencia" class="button big" placeholder="ENVIAR!">
+								<input v-model='experiencia' type="text" @keyup.enter="saveExperiencia" name="¡Cuentanos tu experiencia!">
+								<input type="submit" @click="saveExperiencia" class="button big" name="ENVIAR!">
 							</form>
 						</section>
 					</section>
