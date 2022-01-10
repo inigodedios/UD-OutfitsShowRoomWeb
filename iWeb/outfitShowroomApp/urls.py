@@ -32,6 +32,6 @@ urlpatterns = [
     #FORM PATH
     path('contact/', views.contacto, name='contactForm'),
 
-    #AGENDA PATH
-    path('agenda/', views.agenda, name='agenda'),
+    # #AGENDA PATH
+    # path('agenda/', views.agenda, name='agenda'),
 ]

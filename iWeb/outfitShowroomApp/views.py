@@ -93,7 +93,7 @@ def contacto(request):
     return render(request, "contacto.html", {'form':form})
 
 
-#VISTA PARA AGENDA VUE
-def agenda(request):
-    return render(request, "index.html")
+# #VISTA PARA AGENDA VUE
+# def agenda(request):
+#     return render(request, "index.html")
 
