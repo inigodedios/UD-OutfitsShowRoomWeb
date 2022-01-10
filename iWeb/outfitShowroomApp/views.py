@@ -75,7 +75,7 @@ def contacto(request):
             infForm = form.cleaned_data #guardar en infForm los datos del formulario
             
             sub = "Contacto"
-            msg = "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo']   
+            msg = "Contacto recibido: " + infForm['nombre'] + " " + infForm['apellido'] + " - " + infForm['correo'] + "\n\n\nInquietudes opositor: " + infForm['desc']  
             fromemail = "outfitshowroomapp@gmail.com"
             recipientlist = infForm['correo']
 
