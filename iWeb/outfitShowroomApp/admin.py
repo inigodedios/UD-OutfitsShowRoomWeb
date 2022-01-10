@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import Prenda, Outfit, Ocasion, Estilo, OutfitShowroom
+from django.contrib.auth.models import Group
+from django.urls import path
+
 """
 TODO En el panel de administración cuando añadimos un outfit, tenemos que asociarlo a uno/varios estilos y una/varias prendas.
 Problema-> a la hora de asignar a que prendas y estilos pertenecen, solo sale el id de estas. Tenemos que conseguir que salga el id y su nombre
@@ -42,3 +45,7 @@ admin.site.register(Ocasion, OcasionAdmin)
 admin.site.register(Estilo, EstiloAdmin)
 admin.site.register(Outfit, OutfitAdmin)
 admin.site.register(OutfitShowroom, OutfitShowroomAdmin)
+
+admin.site.site_header = 'Admin Tutorial Dashboard'
+#admin.site.register(Snippet, SnippetAdmin)
+admin.site.unregister(Group)
