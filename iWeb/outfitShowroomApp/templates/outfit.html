@@ -22,11 +22,15 @@
 							<p>{{outfit.desc}}</p>
 							<h3>Ocasiones para las que esta pensado</h3>
 							{%for ocasion in outfit.ocasiones.all%}	
-							<li>{{ocasion.nombre}}</li>
+							<ul>
+								<li>{{ocasion.nombre}}</li>
+							</ul>
 							<br>
 							{%endfor%}
 							<h3>Estilos para las que esta pensado</h3>
-							<li>{{outfit.estilo.nombre}}</li>
+							<ul>
+								<li>{{outfit.estilo.nombre}}</li>
+							</ul>
 						</section>		
 				</div>
 			</section>

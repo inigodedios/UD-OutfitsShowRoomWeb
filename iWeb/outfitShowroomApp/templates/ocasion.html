@@ -61,7 +61,9 @@
 									<p>{{ocasion.desc}}</p>
 									<h3>Lista de outfits asociados a esta ocasión</h3>
 									{%for outfit in ocasion.outfit_set.all%}	
-									<li>{{outfit.nombre}}</li>
+									<ul>
+										<li>{{outfit.nombre}}</li>
+									</ul>
 									{%endfor%}							
 								</section>	
 						</div>

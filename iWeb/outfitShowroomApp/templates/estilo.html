@@ -37,9 +37,11 @@
 									<a href="#" class="image fit"></a>
 									<h3>Detalles del estilo</h3>
 									<p>{{estilo.desc}}</p>
-									<h3>Lista de ourfits asociados</h3>
+									<h3>Lista de outfits asociados</h3>
 									{%for outfit in estilo.outfit_set.all%}
-									<li>{{outfit.nombre}}</li>
+									<ul>
+										<li>{{outfit.nombre}}</li>
+									</ul>
 									{%endfor%}
 								</section>
 						</div>
