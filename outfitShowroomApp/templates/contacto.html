@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% load static %}
+		<!-- Header -->
+		{%block header%}
+			<header id="header" class="skel-layers-fixed">
+				<nav id="nav">
+					<ul>
+						<li><a href="../">Inicio</a></li>
+					</ul>
+				</nav>
+			</header>
+		{%endblock%}
+		
+		<!-- Main -->
+		{%block categoria_info%}
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					{%block form_info%}
+					<h2>Formulario de Contacto</h2>
+					<p>Si le interesa trabajar de embajador de la marca, por favor, rellene el formulario con sus datos de contacto y nos pondremos en contacto con usted.</p> 
+					{%endblock%}
+				</header>    
+			</section>    
+        {%endblock%}
+		
+		{%block categoria_info_extra%}
+				<div class="container">
+					<div class="row 150%">
+						<div class="8u 12u$(2) important(2)">
+							<!-- Content -->
+								<section id="content">
+									<br><br>
+									<h3>Contacto</h3>
+									<form method="POST">{%csrf_token%}   <!-- CSRF PARA REDUCIR POSIBILIDADES DE HACKEO POR PARTE DE USUARIOS MALIGNOS-->
+                                        <table>
+                                            {{form.as_table}}
+                                        </table>
+                                        <input type="submit" value="Enviar">
+                                    </form>
+									<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Pulsando enviar, aceptas el correspondiente tratamiento de tus datos.</p> <!-- &nbsp; es un espacio es-->
+								</section>
+						</div>
+					</div>
+				</div>
+		{%endblock%}
+		</section>
+			
+		<!-- Footer -->
+		{%block footer%}
+		{%endblock%}
+
+	
+</html>
